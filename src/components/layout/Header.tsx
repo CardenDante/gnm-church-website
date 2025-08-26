@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,14 +47,20 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex flex-col items-center">
-              <div className="text-[#0A37BF] font-bold text-lg sm:text-xl lg:text-2xl leading-tight text-center">
-                <div>GOOD NEWS MISSION</div>
-                <div className="text-sm sm:text-base lg:text-lg">KENYA</div>
-              </div>
-            </Link>
-          </div>
+<div className="flex-shrink-0">
+  <Link href="/" className="flex items-center">
+    <div className="relative h-12 sm:h-14 lg:h-16 aspect-[4/1]">
+      <Image
+        src="/logo.png"
+        alt="Good News Mission Kenya"
+        fill
+        className="object-contain"
+        priority
+      />
+    </div>
+  </Link>
+</div>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-4 xl:space-x-6">
