@@ -239,7 +239,7 @@ const Hero = () => {
                 <div className="mb-3">
                   <i className="fas fa-volume-up text-4xl mb-2 text-white opacity-80"></i>
                 </div>
-                <h3 className="text-base font-bold mb-2 leading-tight">Pastor Park Oksoo's Sunday Sermon, August 24, 2025</h3>
+                <h3 className="text-base font-bold mb-2 leading-tight">Pastor Ock Soo Park's Sunday Sermon, August 24, 2025</h3>
                 <p className="text-sm mb-3 opacity-90">Good News Special Replay 2025-08-23</p>
                 <div className="flex justify-between items-center">
                   <span className="text-xs opacity-90">GOODNEWS TV</span>

@@ -141,7 +141,7 @@ const NewsContentHub = () => {
       href: 'http://www.gndaily.kr/news/articleView.html?idxno=50157'
     },
     {
-      title: '[Gimpo] United Worship Service inviting Pastor Park Oksoo with Gracias Choir',
+      title: '[Gimpo] United Worship Service inviting Pastor Ock Soo Park with Gracias Choir',
       date: '2025.08.16',
       image: '/Slider/slider-4.jpg',
       href: 'http://www.gndaily.kr/news/articleView.html?idxno=50134'
@@ -174,17 +174,17 @@ const NewsContentHub = () => {
   const videos = [
     {
       id: 'd0CISjhuj5E',
-      title: 'Pastor Park Oksoo, South African President & Cameroon Prime Minister Meeting[20250822]_Good News TV',
+      title: 'Pastor Ock Soo Park, South African President & Cameroon Prime Minister Meeting[20250822]_Good News TV',
       date: '2025.08.22'
     },
     {
       id: 'uQvWxzdCWmU',
-      title: 'Pastor Park Oksoo, Meeting with African Leaders[20250821]_Good News TV',
+      title: 'Pastor Ock Soo Park, Meeting with African Leaders[20250821]_Good News TV',
       date: '2025.08.22'
     },
     {
       id: 'LXNdYYQq_TM',
-      title: 'Pastor Park Oksoo Japan Visit and Liberian Presidential Meeting[20250820]_Good News TV',
+      title: 'Pastor Ock Soo Park Japan Visit and Liberian Presidential Meeting[20250820]_Good News TV',
       date: '2025.08.21'
     }
   ];
