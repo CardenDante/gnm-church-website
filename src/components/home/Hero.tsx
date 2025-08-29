@@ -165,14 +165,14 @@ const Hero = () => {
                   className="group flex items-center p-3 bg-gray-50 hover:bg-[#049DBF] hover:text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                 >
                   <i className="fas fa-book w-5 h-5 mr-3 text-[#04D9C4] group-hover:text-white transition-colors text-lg"></i>
-                  <span className="font-medium text-gray-800 group-hover:text-white text-sm transition-colors">Bible Seminar</span>
+                  <span className="font-medium text-gray-800 group-hover:text-white text-sm transition-colors">Testimonies</span>
                 </Link>
                 <Link
                   href="/events/index"
                   className="group flex items-center p-3 bg-gray-50 hover:bg-[#04BFBF] hover:text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                 >
                   <i className="fas fa-video w-5 h-5 mr-3 text-[#04D9C4] group-hover:text-white transition-colors text-lg"></i>
-                  <span className="font-medium text-gray-800 group-hover:text-white text-sm transition-colors">Watch the event again</span>
+                  <span className="font-medium text-gray-800 group-hover:text-white text-sm transition-colors">Sermon</span>
                 </Link>
               </div>
             </div>
