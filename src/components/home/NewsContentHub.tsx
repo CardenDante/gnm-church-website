@@ -25,12 +25,12 @@ const NewsContentHub = () => {
     function initializeSwipers() {
       const SwiperClass = (window as any).Swiper;
       if (SwiperClass) {
-        // Video carousel swiper
+        // Video carousel swiper - pagination moved outside
         new SwiperClass("#mySwiper-today", {
           slidesPerView: 1,
           spaceBetween: 10,
           pagination: {
-            el: ".swiper-pagination",
+            el: "#pagination-today",
             clickable: true,
           },
           navigation: {
@@ -49,10 +49,10 @@ const NewsContentHub = () => {
           },
         });
 
-        // Monthly magazine swiper
+        // Monthly magazine swiper - 2 columns, 2 rows
         new SwiperClass("#mySwiper-monthly", {
-          slidesPerView: 1,
-          spaceBetween: 10,
+          slidesPerView: 2,
+          spaceBetween: 15,
           speed: 2000,
           autoplay: {
             delay: 2000,
@@ -61,6 +61,10 @@ const NewsContentHub = () => {
           pagination: {
             el: "#swiper-pagination-monthly",
             clickable: true,
+          },
+          grid: {
+            rows: 2,
+            fill: 'row'
           },
           breakpoints: {
             320: {
@@ -75,7 +79,7 @@ const NewsContentHub = () => {
               grid: {
                 rows: 2,
               },
-              spaceBetween: 20,
+              spaceBetween: 15,
             },
           },
         });
@@ -240,7 +244,7 @@ const NewsContentHub = () => {
           <div className="bg-white rounded-xl shadow-lg p-6">
             
             {/* Mobile Notice View */}
-            <div className="lg:hidden mb-6">
+            {/* <div className="lg:hidden mb-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-bold text-gray-800">Notice +</h3>
               </div>
@@ -260,14 +264,14 @@ const NewsContentHub = () => {
                   </Link>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Mission News Section */}
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                 <Link href="https://www.gndaily.kr/" target="_blank" className="hover:text-[#0A37BF] transition-colors">
                   Mission News
-                  <span className="ml-2 text-[#04D9C4] text-lg">+</span>
+                  
                 </Link>
               </h2>
               
@@ -286,9 +290,12 @@ const NewsContentHub = () => {
                           <Image
                             src={news.image}
                             alt={news.title}
-                            width={96}
-                            height={64}
+                            width={120}
+                            height={80}
+                            quality={90}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            sizes="(max-width: 768px) 96px, 96px"
+                            priority={index === 0}
                           />
                         </div>
                         <div className="flex-1">
@@ -309,7 +316,7 @@ const NewsContentHub = () => {
                       key={index}
                       href={news.href}
                       target="_blank"
-                      className="block p-3 hover:bg-blue-50 rounded-lg transition-all duration-300 border-l-4 border-transparent hover:border-[#04D9C4]"
+                      className="block p-3 hover:bg-gray-50 rounded-lg transition-colors"
                     >
                       <h3 className="text-sm text-gray-800 hover:text-[#0A37BF] font-medium line-clamp-2 transition-colors">
                         {news.title}
@@ -325,7 +332,6 @@ const NewsContentHub = () => {
               <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                 <Link href="https://www.goodnewstv.kr/" target="_blank" className="hover:text-[#0A37BF] transition-colors">
                   Good News Today
-                  <span className="ml-2 text-[#04D9C4] text-lg">+</span>
                 </Link>
               </h2>
               
@@ -354,8 +360,9 @@ const NewsContentHub = () => {
                 </div>
                 <div className="swiper-button-next"></div>
                 <div className="swiper-button-prev"></div>
-                <div className="swiper-pagination mt-4"></div>
               </div>
+              {/* Pagination moved outside and below */}
+              <div id="pagination-today" className="swiper-pagination mt-4 !relative"></div>
             </div>
           </div>
         </div>
@@ -363,12 +370,12 @@ const NewsContentHub = () => {
         {/* Right Column - Magazine & Kids Content (3/12) */}
         <div className="lg:col-span-3 space-y-6">
           
-          {/* Monthly Magazine */}
+          {/* Monthly Magazine - 2x2 Grid */}
           <div className="bg-white rounded-xl shadow-lg p-4">
             <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
               <Link href="https://www.gndaily.kr/news/articleList.html?sc_section_code=S1N12&view_type=sm" target="_blank" className="hover:text-[#0A37BF] transition-colors">
                 Monthly Good News
-                <span className="ml-2 text-[#04D9C4]">+</span>
+            
               </Link>
             </h2>
             
@@ -377,16 +384,18 @@ const NewsContentHub = () => {
                 {monthlyMagazine.map((article, index) => (
                   <div key={index} className="swiper-slide">
                     <Link href={article.href} target="_blank" className="block group">
-                      <div className="aspect-[4/3] overflow-hidden rounded-lg mb-3">
+                      <div className="aspect-[4/3] overflow-hidden rounded-lg mb-2">
                         <Image
                           src={article.image}
                           alt={article.title}
-                          width={200}
-                          height={150}
+                          width={150}
+                          height={112}
+                          quality={90}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 1024px) 150px, 150px"
                         />
                       </div>
-                      <h3 className="text-sm font-medium text-gray-800 group-hover:text-[#0A37BF] line-clamp-2 mb-2 transition-colors">
+                      <h3 className="text-xs font-medium text-gray-800 group-hover:text-[#0A37BF] line-clamp-2 mb-1 transition-colors">
                         {article.title}
                       </h3>
                       <p className="text-xs text-gray-500">{article.date}</p>
@@ -403,7 +412,6 @@ const NewsContentHub = () => {
             <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
               <Link href="https://www.gndaily.kr/index.html?editcode=MAIN_8" target="_blank" className="hover:text-[#0A37BF] transition-colors">
                 Kids Mind
-                <span className="ml-2 text-[#04D9C4]">+</span>
               </Link>
             </h2>
             
@@ -418,7 +426,9 @@ const NewsContentHub = () => {
                           alt={article.title}
                           width={200}
                           height={150}
+                          quality={90}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 1024px) 200px, 200px"
                         />
                       </div>
                       <h3 className="text-sm font-medium text-gray-800 group-hover:text-[#0A37BF] line-clamp-2 mb-2 transition-colors">
@@ -440,10 +450,22 @@ const NewsContentHub = () => {
               target="_blank" 
               className="block group"
             >
-              <div className="bg-gradient-to-r from-[#0A37BF] to-[#04D9C4] rounded-xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="text-2xl mb-2">🎬</div>
-                <h3 className="font-bold text-lg mb-2">Documentary</h3>
-                <p className="text-sm opacity-90">Watch our latest documentaries</p>
+              <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                <Image
+                  src="/Slider/documentary.jpg"
+                  alt="Documentary"
+                  width={300}
+                  height={200}
+                  quality={90}
+                  className="w-full h-44 object-fill group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 1024px) 300px, 300px"
+                />
+                {/* <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300">
+                  <div className="flex flex-col justify-center items-center h-full text-white text-center p-4">
+                    <h3 className="font-bold text-lg mb-2 drop-shadow-lg">Documentary</h3>
+                    <p className="text-sm opacity-90 drop-shadow-lg">Watch our latest documentaries</p>
+                  </div>
+                </div> */}
               </div>
             </Link>
           </div>
