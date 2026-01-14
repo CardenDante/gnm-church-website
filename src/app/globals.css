@@ -31,3 +31,8 @@ body {
 .gradient-church {
   background: linear-gradient(90deg, #0A37BF 0%, #0477BF 25%, #049DBF 50%, #04BFBF 75%, #04D9C4 100%);
 }
+.mbc-nav-link.active {
+  background-color: #0477BF;
+  color: white;
+  font-weight: 500;
+}
