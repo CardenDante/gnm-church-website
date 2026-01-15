@@ -155,7 +155,7 @@ const departmentContent = {
     ],
   },
   '/departments/leaders': {
-    color: 'from-red-500 to-red-700',
+    color: 'from-indigo-500 to-indigo-700',
     icon: Target,
     stats: [
       { label: 'Members', value: '500+', icon: PeopleIcon },

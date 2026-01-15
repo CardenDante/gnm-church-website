@@ -14,7 +14,10 @@ import {
   MapPin,
   ArrowRight,
   Star,
-  GraduationCap
+  GraduationCap,
+  Languages,
+  Cross,
+  Megaphone
 } from 'lucide-react';
 
 export default function CLFPage() {
@@ -187,7 +190,7 @@ export default function CLFPage() {
               <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-indigo-50 transition-colors group">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-indigo-100 rounded-lg">
-                    <LanguagesIcon className="w-4 h-4 text-indigo-600" />
+                    <Languages className="w-4 h-4 text-indigo-600" />
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Cross-Cultural</p>
@@ -257,68 +260,3 @@ export default function CLFPage() {
     </div>
   );
 }
-
-function LanguagesIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M5 8l6 6" />
-      <path d="M4 14l6-6 2-3" />
-      <path d="M2 5h12" />
-      <path d="M7 2l1 2" />
-      <path d="M22 22l-5-10-5 10" />
-      <path d="M14 18h6" />
-    </svg>
-  );
-}
-
-function Cross(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M12 2v20" />
-      <path d="M2 12h20" />
-    </svg>
-  );
-}
-
-function Megaphone(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M3 11l18-5v12L3 14v-3z" />
-      <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
-    </svg>
-  );
-}
-
