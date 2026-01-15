@@ -6,7 +6,7 @@ export default function DiplomaCoursePage() {
                 <h1 className="text-3xl font-bold text-[#0477BF] mb-6">Diploma 1</h1>
 
                 {/* The Book of Exodus 1 */}
-                <div className="mb-8">
+                <div className="mb-8"> 
                     <h2 className="text-2xl font-bold text-[#0477BF] mb-4">
                         The Book of Exodus 1
                     </h2>

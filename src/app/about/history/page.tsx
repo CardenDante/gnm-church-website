@@ -1,103 +1,291 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HistoryPage() {
+  const timelineEvents = [
+    {
+      year: "1993",
+      title: "First Encounter",
+      description: "Kenyan delegation meets Good News Mission at South Korea trade exhibition",
+      icon: "👥",
+      color: "bg-blue-100 border-blue-200"
+    },
+    {
+      year: "1994",
+      title: "First Gospel Campaign",
+      description: "Rev. Ock Soo Park preaches at Nyayo National Stadium",
+      icon: "📣",
+      color: "bg-green-100 border-green-200"
+    },
+    {
+      year: "1996",
+      title: "Official Registration",
+      description: "Good News Mission registered by Kenyan Government",
+      icon: "📜",
+      color: "bg-purple-100 border-purple-200"
+    },
+    {
+      year: "1997",
+      title: "First Branch Church",
+      description: "Migori Branch Church established",
+      icon: "⛪",
+      color: "bg-amber-100 border-amber-200"
+    },
+    {
+      year: "1999",
+      title: "Ministers Dispatched",
+      description: "First Kenyan ministers sent to 5 regions",
+      icon: "🚀",
+      color: "bg-cyan-100 border-cyan-200"
+    },
+    {
+      year: "2001",
+      title: "Land Acquisition",
+      description: "Purchased land for Mission Center in Nairobi",
+      icon: "🏛️",
+      color: "bg-indigo-100 border-indigo-200"
+    },
+    {
+      year: "2007",
+      title: "Bible College",
+      description: "Mahanaim Bible College started",
+      icon: "📚",
+      color: "bg-red-100 border-red-200"
+    },
+    {
+      year: "2009",
+      title: "Broadcasting Launch",
+      description: "GBS TV begins airing across East Africa",
+      icon: "📺",
+      color: "bg-orange-100 border-orange-200"
+    }
+  ];
+
+  const branchChurches = [
+    { name: "Nairobi Main", number: "Headquarters", phone: "0704 333 111", region: "Central" },
+    { name: "Migori Church", number: "0728 383 193", phone: "0728 383 193", region: "Nyanza" },
+    { name: "Kisumu Church", number: "0721 342 176", phone: "0721 342 176", region: "Western" },
+    { name: "Mombasa Church", number: "0726 460 513", phone: "0726 460 513", region: "Coast" },
+    { name: "Nakuru Church", number: "0795 364 637", phone: "0795 364 637", region: "Rift Valley" },
+    { name: "Eldoret Church", number: "0727 508 361", phone: "0727 508 361", region: "Rift Valley" },
+    { name: "Kitengela Church", number: "0708 753 238", phone: "0708 753 238", region: "Central" },
+    { name: "Thika Church", number: "0710 764 424", phone: "0710 764 424", region: "Central" }
+  ];
+
   return (
     <main>
-      {/* Head Title Area  */}
-      <div className="head_title_area text-center py-16 bg-gray-50">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          History
-        </h1>
-        <p className="text-lg md:text-xl text-gray-600 mb-4">
-          Our Journey of Faith in Kenya
-        </p>
-        <p className="text-base text-gray-600">
-          From the first encounter in 1993 to establishing 40 branch churches across the country
-        </p>
+      {/* Hero Section */}
+      <div className="relative py-20 bg-gradient-to-r from-blue-900 to-cyan-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Our Journey of Faith in Kenya
+          </h1>
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+            From the first encounter in 1993 to establishing branch churches across the nation
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/branches"
+              className="bg-white text-[#0477BF] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform "
+            >
+              View Our Branches
+            </Link>
+            <Link
+              href="/about/greetings"
+              className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-300"
+            >
+              Greetings from Leadership
+            </Link>
+          </div>
+        </div>
       </div>
 
-      {/* Main Content  */}
-      <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-white rounded-xl shadow-md p-6 md:p-10">
-          {/* Main Title */}
-          <h2 className="text-3xl font-bold text-[#0477BF] mb-8 text-center">
-            History of Good News Mission Kenya
-          </h2>
-
-          {/* Content Paragraphs */}
-          <div className="space-y-6 text-gray-700 leading-relaxed">
-            <p>
-              In 1993, a delegation of Kenyans went to South Korea for an international trade exhibition. While there, God worked and the Good News Mission team was able to meet Kenyans for the very first time. This happened when South Korean brothers in Theology School (The Korea Gospel Missionary College) went to witness at the exhibition venue. There were visitors from many nationalities at the exhibition. The Kenyan delegation opened their hearts to the Korean Good News Mission witnessing team and in this way, a new door opened for the gospel to be preached in Kenya. While the exhibition continued, Rev. Ock Soo Park invited the Kenyan delegation to a dinner party at his home. The invited guests had a good time and said, &apos;Rev. Park in Kenya when you are invited to a party you take a gift with you for the host. But we didn&apos;t bring any gift. Our gift that we present to you is a gospel song as a way of expressing our gratitude.&apos; The then Minister of Trade and Commerce, Mr. Kirugi Joseph Laiboni M&apos;Mukidia was part of the Kenyan delegation and he too was present at the Dinner party hosted by Pastor Park.
-            </p>
-
-            <p>
-              The Kenyan team kept in touch with Rev. Park and in August 1994, they invited him to preach at the &quot;Move on Convention&quot; that was held at The Nyayo National Stadium in Nairobi. As Rev. Park stood before the multitude to preach, he discovered that though Kenyans were very zealous for God, they were still under sin. He witnessed how many pastors shouted &quot;pokea&quot; (meaning &apos;receive&apos; in english) and in unison the people would chant back &quot;Amen&quot;. He knew right away there was something amiss. That is not the way to receive the Holy Spirit.
-            </p>
-
-            <p>
-              In his own testimony Rev. Park said; there were thousands of people wearing torn clothes and shoes crying under the steamy sun in a large playground field. They didn&apos;t even eat. But people who call themselves Pastors didn&apos;t preach the Gospel. They took all the poor people&apos;s money, ate good food in good restaurants and lived well. &quot;I felt very painful in my heart. I wanted to live and preach the gospel in Kenya for the rest of my life but due to circumstances, I promised that I would send a missionary.&quot; His prayer was, &quot;God you allowed me to serve in South Korea. Allow me to serve in Kenya.&quot; In November 1994, Good News Mission (South Korea) sent two missionaries to Kenya: Missionary Kim Jong Duk and Missionary Yoon Jong Soo. They began preaching the gospel from their residential house and though they met numerous challenges, they didn&apos;t give up. Amidst opposition and challenges from within and without, God opened the way and Good News Mission was officially registered by the Kenyan Government on the 16th of March 1996.
-            </p>
-
-            <p>
-              On 17 April 1997, one of the missionaries went to Migori to open a branch Church. Rev. Ock Soo Park had earlier visited and preached the Gospel in Migori and by God&apos;s grace, there were some born again brothers and sisters already on the ground to receive the new missionary. Though the spiritual situation in Migori was dark and unpromising, through the word of Hebrews 10:38 &hellip;&quot;the just shall live by faith,&quot; the light of God&apos;s Word was able to overcome the darkness and the Migori Branch Church was established.
-            </p>
-
-            {/* First Image: Compound */}
-            <div className="my-8">
-              <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-md">
-                <Image
-                  src="/about/compound.jpg"
-                  alt="Good News Mission Church Nairobi Compound"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                  priority={false}
-                />
-              </div>
-              <p className="text-center text-gray-600 italic mt-3 text-sm">
-                Good News Mission Church Nairobi Compound.
-              </p>
+      {/* Stats Banner */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-8 relative z-10">
+        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl shadow-xl p-8 text-white">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold mb-2">30+</div>
+              <div className="text-blue-100">Years in Kenya</div>
             </div>
-
-            <p>
-              In August 1999, after attending theology school at Good News Missionary School in Nairobi, the first team of Kenyan ministers was dispatched and they were sent to five areas, namely Kisumu, Busia, Kajiado, Mombasa and Eldoret. As they went to start churches, they departed with only a single bag and some money for transportation and rent for one month. Some of them had places to live, but others did not even know anyone residing in the assigned towns. They were solely depending on God and through this way, God helped Good News Mission moment by moment. Currently, Good News Mission Kenya has established 40 branch churches across the country and we give glory to God.
-            </p>
-
-            <p>
-              At the end of the year 1999, Rev. Ock Soo Park called the current Korean Missionary in Kenya, and said, &quot;let us buy land in Kenya and build a sanctuary as well as start a broadcasting station.&quot; He had been praying for the Kenya mission and God was revealing through him what He was about to do. Land acquisition for the Kenya Mission was not easy but in the year 2001, through the word of promise in Psalms 37:9, 29 &quot;but those that wait upon the Lord, they shall inherit the earth&quot; the land on which the Good News Mission Center stands was purchased. Continuously, God has been faithful and worked in many different ways.
-            </p>
-
-            {/* Second Image: Service Hall */}
-            <div className="my-8">
-              <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-md">
-                <Image
-                  src="/about/service_hall.jpg"
-                  alt="Sunday Service in the main service hall at Good News Mission Church Nairobi"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                  priority={false}
-                />
-              </div>
-              <p className="text-center text-gray-600 italic mt-3 text-sm">
-                Sunday Service in the main service hall at Good News Mission Church Nairobi.
-              </p>
+            <div>
+              <div className="text-4xl font-bold mb-2">32+</div>
+              <div className="text-blue-100">Branch Churches</div>
             </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">5,000+</div>
+              <div className="text-blue-100">Members</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">6</div>
+              <div className="text-blue-100">Educational Institutions</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <p>
-              In the year 2007, Good News Mission Kenya started Mahanaim Bible College and through the College many men of God continue to be trained. In 2009, the Good News Broadcasting System (GBS TV) started to air the Good News not only in Kenya but in other East African countries as well. In 2011, God paved way for the Mahanaim High School and Mahanaim College to be established. Through these institutions the Gospel is being preached to many different ways.
-            </p>
+      {/* Main Content Grid */}
+      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            <p>
-              In the year 2014 God allowed Good News Mission Kenya to register The National Peace Bible Crusade (NPBC), an umbrella organization for different denominations and pastors whose sole purpose is to preach and spread the true Gospel all over Kenya with one accord. We shall preach the Gospel to the End, With the Lord to the Last.
-            </p>
+          {/* Left Column: History Text  */}
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-2xl md:shadow-lg p-8">
+              <h2 className="text-3xl font-bold text-[#0477BF] mb-8">History of Good News Mission Kenya</h2>
+
+              {/*  Text Content */}
+              <div className="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                  In 1993, a Kenyan delegation attending a trade exhibition in South Korea encountered the Good News Mission team. This divine connection opened doors for the Gospel in Kenya. The Kenyan visitors were invited to dinner by Rev. Ock Soo Park, where they shared fellowship and gospel songs.
+                </p>
+
+                <p>
+                  In August 1994, Rev. Park was invited to preach at Nairobi's Nyayo National Stadium. He witnessed Kenyans' zeal for God but recognized a need for true understanding of the Gospel. Moved by compassion for the people, he resolved to send missionaries to Kenya.
+                </p>
+
+                <p>
+                  In November 1994, missionaries Kim Jong Duk and Yoon Jong Soo arrived in Kenya. Despite challenges, they faithfully preached from their home. God opened doors, and on March 16, 1996, Good News Mission was officially registered in Kenya.
+                </p>
+
+                <p>
+                  The mission expanded rapidly. On April 17, 1997, the first branch church was established in Migori. In August 1999, the first Kenyan ministers were dispatched to Kisumu, Busia, Kajiado, Mombasa, and Eldoret regions.
+                </p>
+
+                {/* First Image: Compound */}
+                <div className="my-8">
+                  <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-md">
+                    <Image
+                      src="/about/compound.jpg"
+                      alt="Good News Mission Church Nairobi Compound"
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                      priority={false}
+                    />
+                  </div>
+                  <p className="text-center text-gray-600 italic mt-3 text-sm">
+                    Good News Mission Church Nairobi Compound
+                  </p>
+                </div>
+
+                <p>
+                  In 2001, land was acquired in Nairobi through God's provision, fulfilling the promise of Psalms 37. This became the headquarters for the growing mission work.
+                </p>
+
+                <p>
+                  Educational ministries flourished. Mahanaim Bible College began in 2007, training church leaders. In 2009, Good News Broadcasting System (GBS TV) launched, spreading the Gospel across East Africa. Mahanaim High School and College followed in 2011.
+                </p>
+
+                {/* Second Image: Service Hall */}
+                <div className="my-8">
+                  <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-md">
+                    <Image
+                      src="/about/service_hall.jpg"
+                      alt="Sunday Service in the main service hall at Good News Mission Church Nairobi"
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                      priority={false}
+                    />
+                  </div>
+                  <p className="text-center text-gray-600 italic mt-3 text-sm">
+                    Sunday Service at Good News Mission Nairobi
+                  </p>
+                </div>
+
+                <p>
+                  In 2014, the National Peace Bible Crusade (NPBC) was registered, uniting denominations across Kenya to spread the true Gospel with one accord. Today, Good News Mission continues to grow, reaching communities throughout Kenya.
+                </p>
+
+                <p className="font-medium text-[#0477BF]">
+                  Our commitment remains: "We shall preach the Gospel to the End, With the Lord to the Last."
+                </p>
+              </div>
+
+              {/* Quote Section */}
+              <div className="mt-12 pt-8 border-t border-gray-200">
+                <div className="flex justify-center">
+                  <div className="text-gray-500 italic text-center max-w-2xl">
+                    "We shall preach the Gospel to the End, With the Lord to the Last."
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-       
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <div className="flex justify-center">
-              <div className="text-gray-500 italic text-center max-w-2xl">
-                &quot;We shall preach the Gospel to the End, With the Lord to the Last.&quot;
+          {/* Right Column: Timeline & Quick Links  */}
+          <div className="space-y-8">
+
+            {/* Timeline Card */}
+            <div className="bg-white rounded-2xl shadow-md p-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                <span className="w-2 h-6 bg-[#0477BF] mr-3 rounded"></span>
+                Historical Timeline
+              </h3>
+              <div className="space-y-4">
+                {timelineEvents.map((event, index) => (
+                  <div
+                    key={index}
+                    className={`p-4 rounded-xl border ${event.color} hover:shadow-md transition-shadow`}
+                  >
+                    <div className="flex items-start">
+                      <div className="text-2xl mr-3">{event.icon}</div>
+                      <div>
+                        <div className="flex items-center">
+                          <span className="font-bold text-gray-800 mr-2">{event.year}</span>
+                          <span className="text-sm font-semibold text-gray-700">{event.title}</span>
+                        </div>
+                        <p className="text-sm text-gray-600 mt-1">{event.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Branch Churches Card */}
+            <div className="bg-white rounded-2xl shadow-md p-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Branch Churches</h3>
+              <div className="space-y-3 max-h-[400px] overflow-y-auto pr-2">
+                {branchChurches.map((church, index) => (
+                  <div key={index} className="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg border-b border-gray-100 last:border-0">
+                    <div className="flex-1 min-w-0">
+                      <div className="font-medium text-gray-800 truncate">{church.name}</div>
+                      <div className="text-xs text-gray-500 truncate">{church.region}</div>
+                    </div>
+                    <div className="text-right flex-shrink-0 ml-4">
+                      <div className="text-sm font-medium text-[#0477BF] truncate">{church.number}</div>
+                      {church.phone !== church.number && (
+                        <div className="text-xs text-gray-500 truncate">{church.phone}</div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/branches"
+                className="block text-center mt-6 text-[#0477BF] font-semibold hover:text-[#0A37BF] transition-colors py-2 border border-[#0477BF] rounded-lg hover:bg-blue-50"
+              >
+                View All Branches →
+              </Link>
+            </div>
+
+            {/* Quick Links Card */}
+            <div className="bg-gradient-to-br from-[#0477BF] to-cyan-600 md:rounded-2xl md:shadow-lg p-6 text-white">
+              <h3 className="text-xl font-bold mb-4">Explore More</h3>
+              <div className="space-y-3">
+                <Link href="/about/greetings" className="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <span className="mr-3">📜</span>
+                  <span>Greetings Message</span>
+                </Link>
+                <Link href="/about/beliefs" className="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <span className="mr-3">✝️</span>
+                  <span>What We Believe</span>
+                </Link>
+                <Link href="/branches" className="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <span className="mr-3">🏛️</span>
+                  <span>Our Branches</span>
+                </Link>
               </div>
             </div>
           </div>

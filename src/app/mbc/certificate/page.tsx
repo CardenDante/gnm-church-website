@@ -9,7 +9,7 @@ export default function CertificateCoursePage() {
                     <p className="font-semibold">
                         Certificate course takes 3 semesters each semester lasting for 3 months
                     </p>
-                </div>
+                </div> 
             </section>
 
             {/* Introduction to the Synoptic Gospels */}

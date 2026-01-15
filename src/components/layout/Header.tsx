@@ -16,6 +16,7 @@ const Header = () => {
     { name: 'Greetings Message', href: '/about/greetings' },
     { name: 'History', href: '/about/history' },
     { name: 'What we believe', href: '/about/beliefs' },
+    { name: 'Our Church Branches', href: '/branches' },
   ];
 
   const mbcDropdownItems = [

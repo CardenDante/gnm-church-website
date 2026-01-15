@@ -1,5 +1,9 @@
-import Link from 'next/link';
+// app/media/sermons/page.tsx
+'use client';
 
+import { useState } from 'react';
+import Link from 'next/link';
+import { Calendar, User, MapPin, PlayCircle, Download, Share2, Heart, MessageSquare, Headphones, Eye } from 'lucide-react';
 
 const sermons = [
   {
@@ -10,8 +14,15 @@ const sermons = [
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     slug: "power-of-faith",
     speaker: "Pastor Yohan Kim",
+    speakerImage: "/speakers/yohan.jpg",
     location: "Good News Mission Nairobi",
-    videoId: "dQw4w9WgXcQ" 
+    videoId: "dQw4w9WgXcQ",
+    duration: "45:20",
+    views: "1,245",
+    downloads: "356",
+    likes: "89",
+    tags: ["Faith", "Encouragement", "Spiritual Growth"],
+    series: "Living by Faith"
   },
   {
     id: 2,
@@ -20,9 +31,16 @@ const sermons = [
     excerpt: "This message focuses on cultivating a heart of thankfulness in all circumstances. We examine biblical principles of gratitude and how they transform our perspective on life.",
     content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     slug: "living-gratitude",
-    speaker: "Pastor John Smith",
-    location: "Nairobi",
-    videoId: "tc6fjy5ech" 
+    speaker: "Pastor Nelson Ochuoga",
+    speakerImage: "/speakers/nelson.jpg",
+    location: "Nairobi Main Church",
+    videoId: "tc6fjy5ech",
+    duration: "38:15",
+    views: "987",
+    downloads: "234",
+    likes: "67",
+    tags: ["Gratitude", "Thankfulness", "Joy"],
+    series: "Heart Attitudes"
   },
   {
     id: 3,
@@ -32,8 +50,15 @@ const sermons = [
     content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     slug: "new-beginnings",
     speaker: "Pastor Yohan Kim",
-    location: "Kampla",
-    videoId: "abc123def45" 
+    speakerImage: "/speakers/yohan.jpg",
+    location: "Kampala Church",
+    videoId: "abc123def45",
+    duration: "42:30",
+    views: "1,532",
+    downloads: "421",
+    likes: "112",
+    tags: ["New Beginnings", "Hope", "Renewal"],
+    series: "New Year Series"
   },
   {
     id: 4,
@@ -43,8 +68,13 @@ const sermons = [
     content: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
     slug: "true-meaning-christmas",
     speaker: "Pastor Mary Johnson",
-    location: "Good News Mission Nairobi"
-    // videoId omitted intentionally - some sermons don't have videos
+    speakerImage: "/speakers/mary.jpg",
+    location: "Good News Mission Nairobi",
+    views: "2,134",
+    downloads: "589",
+    likes: "156",
+    tags: ["Christmas", "Incarnation", "Salvation"],
+    series: "Christmas Special"
   },
   {
     id: 5,
@@ -54,8 +84,15 @@ const sermons = [
     content: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
     slug: "preparing-hearts-christmas",
     speaker: "Pastor Yohan Kim",
-    location: "Nairobi",
-    videoId: "xyz789pqr01"
+    speakerImage: "/speakers/yohan.jpg",
+    location: "Nairobi Main Church",
+    videoId: "xyz789pqr01",
+    duration: "47:25",
+    views: "876",
+    downloads: "312",
+    likes: "78",
+    tags: ["Advent", "Preparation", "Christmas"],
+    series: "Advent Series"
   },
   {
     id: 6,
@@ -65,109 +102,279 @@ const sermons = [
     content: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?",
     slug: "hope-of-advent",
     speaker: "Pastor David Brown",
-    location: "Kampla"
-    // No video
-  },
-  {
-    id: 7,
-    date: "December 4, 2022",
-    title: "Peace in a Troubled World",
-    excerpt: "Advent series part 2: Finding true peace through Christ amidst life's storms. Biblical principles for experiencing God's peace that surpasses understanding.",
-    content: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-    slug: "peace-troubled-world",
-    speaker: "Pastor Yohan Kim",
-    location: "Good News Mission Nairobi",
-    videoId: "lmn234opq56"
-  },
-  {
-    id: 8,
-    date: "November 27, 2022",
-    title: "The Promise of Joy",
-    excerpt: "Advent series part 1: Understanding the difference between happiness and the deep, abiding joy that comes from knowing Christ.",
-    content: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
-    slug: "promise-of-joy",
-    speaker: "Pastor Sarah Williams",
-    location: "Nairobi"
-    // No video
+    speakerImage: "/speakers/david.jpg",
+    location: "Kampala Church",
+    views: "654",
+    downloads: "198",
+    likes: "45",
+    tags: ["Hope", "Advent", "Promise"],
+    series: "Advent Series"
   },
 ];
 
-//  function to get YouTube embed URL
-const getYouTubeEmbedUrl = (videoId: string | null | undefined) => {
-  if (!videoId) return null;
-  return `https://www.youtube.com/embed/${videoId}`;
-};
+const featuredSeries = [
+  {
+    id: 1,
+    title: "Book of Romans Series",
+    description: "Deep dive into Paul's letter to the Romans",
+    sermonCount: 12,
+    latestSermon: "Romans 8: The Spirit of Life",
+    color: "from-blue-500 to-blue-600",
+    icon: BookIcon
+  },
+  {
+    id: 2,
+    title: "Foundations of Faith",
+    description: "Essential teachings for new believers",
+    sermonCount: 8,
+    latestSermon: "What is Salvation?",
+    color: "from-purple-500 to-purple-600",
+    icon: Headphones
+  },
+  {
+    id: 3,
+    title: "Sermon on the Mount",
+    description: "Jesus' core teachings unpacked",
+    sermonCount: 10,
+    latestSermon: "The Beatitudes",
+    color: "from-green-500 to-green-600",
+    icon: MessageSquare
+  }
+];
+
+function BookIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+    </svg>
+  );
+}
+
+function ArrowRight(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </svg>
+  );
+}
 
 export default function SermonsPage() {
+  const [sortBy, setSortBy] = useState('newest');
+  
   return (
-    <div className=''>
+    <div className="p-6">
+      {/* Bento Grid - Featured Series */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Featured Series</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {featuredSeries.map((series) => {
+            const Icon = series.icon;
+            return (
+              <div 
+                key={series.id} 
+                className={`bg-gradient-to-br ${series.color} rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-shadow duration-300`}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-2 bg-white/20 rounded-lg">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <span className="text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
+                    {series.sermonCount} sermons
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">{series.title}</h3>
+                <p className="text-white/80 text-sm mb-3">{series.description}</p>
+                <div className="mt-4 pt-4 border-t border-white/20">
+                  <p className="text-sm text-white/90 mb-2">Latest: {series.latestSermon}</p>
+                  <Link 
+                    href={`/media/sermons/series/${series.id}`}
+                    className="text-sm font-medium hover:underline flex items-center gap-1"
+                  >
+                    Explore Series
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Sermons Header */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-800">Recent Sermons</h2>
+          <p className="text-gray-600">Biblical teachings and messages from our pastors</p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <select 
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="newest">Newest First</option>
+            <option value="popular">Most Popular</option>
+            <option value="oldest">Oldest First</option>
+            <option value="alphabetical">Alphabetical</option>
+          </select>
+          <button className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+            </svg>
+            Filter
+          </button>
+        </div>
+      </div>
+
       {/* Sermons Grid */}
-      <div className="space-y-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 gap-9 md:gap-8">
         {sermons.map((sermon) => {
           const hasVideo = !!sermon.videoId;
           
           return (
-            <div key={sermon.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className={`p-6 ${hasVideo ? 'grid grid-cols-1 md:grid-cols-3 gap-6' : ''}`}>
-                
-                {/* Video Section*/}
-                {hasVideo && sermon.videoId && (
-                  <div className="md:col-span-1">
-                    <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg">
-                      <iframe
-                        src={getYouTubeEmbedUrl(sermon.videoId) || ''}
-                        className="absolute top-0 left-0 w-full h-full"
-                        title={`${sermon.title} - Sermon Video`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+            <div key={sermon.id} className=" border-b border-gray-400 overflow-hidden  transition-all duration-300">
+              <div className="pb-8 pt-4">
+                <div className={`${hasVideo ? 'flex flex-col lg:flex-row gap-6' : ''}`}>
+                  {/* Video/Thumbnail Section  */}
+                  {hasVideo && (
+                    <div className="lg:w-2/5">
+                      <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-md">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${sermon.videoId}`}
+                          className="absolute top-0 left-0 w-full h-full"
+                          title={`${sermon.title} - Sermon Video`}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                      
+                      {/* Video Stats  */}
+                      <div className="mt-3 flex items-center justify-between text-sm text-gray-600">
+                        <div className="flex items-center gap-1">
+                          <Eye className="w-4 h-4" />
+                          <span>{sermon.views} views</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <button className="flex items-center gap-1 hover:text-red-500 transition-colors">
+                            <Heart className="w-4 h-4" />
+                            <span>{sermon.likes}</span>
+                          </button>
+                          <button className="hover:text-blue-600 transition-colors">
+                            <Share2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                )}
-                
-                {/* Content Section */}
-                <div className={`${hasVideo ? 'md:col-span-2' : ''}`}>
-                  {/* Date */}
-                  <div className="text-sm text-[#0477BF] font-medium mb-2">
-                    {sermon.date}
-                  </div>
+                  )}
                   
-                  {/* Title  */}
-                  <h2 className="text-2xl font-bold text-gray-800 mb-3">
-                    <Link 
-                      href={`/sermon/${sermon.slug}`}
-                      className="hover:text-[#0477BF] transition-colors duration-200"
-                    >
-                      {sermon.title}
-                    </Link>
-                  </h2>
-                  
-                  {/* Speaker and Location */}
-                  <div className="mb-4">
-                    <div className="text-lg font-semibold text-gray-700">
-                      {sermon.speaker}
+                  {/* Content Section */}
+                  <div className={`${hasVideo ? 'lg:w-3/5' : ''}`}>
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {sermon.tags.map((tag, index) => (
+                        <span 
+                          key={index} 
+                          className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {sermon.series && (
+                        <span className="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full">
+                          {sermon.series}
+                        </span>
+                      )}
                     </div>
-                    <div className="text-gray-500 text-sm">
-                      {sermon.location}
+                    
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition-colors">
+                      <Link href={`/sermon/${sermon.slug}`}>
+                        {sermon.title}
+                      </Link>
+                    </h3>
+                    
+                    {/* Metadata */}
+                    <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-gray-600">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {sermon.date}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <User className="w-4 h-4" />
+                        {sermon.speaker}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        {sermon.location}
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Excerpt */}
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {sermon.excerpt}
-                  </p>
-                  
-                  {/* Read More Link */}
-                  <div className="pt-4 border-t border-gray-100">
-                    <Link 
-                      href={`/sermon/${sermon.slug}`}
-                      className="inline-flex items-center text-[#0477BF] hover:text-[#0A37BF] font-medium"
-                    >
-                      Read full sermon
-                      <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </Link>
+                    
+                    {/* Excerpt */}
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      {sermon.excerpt}
+                    </p>
+                    
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                      {hasVideo ? (
+                        <>
+                          <Link 
+                            href={`/sermon/${sermon.slug}`}
+                            className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer"
+                          >
+                            <PlayCircle className="w-4 h-4" />
+                            Watch Sermon
+                          </Link>
+                          <button className="inline-flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                            <Download className="w-4 h-4" />
+                            Download MP3
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          <Link 
+                            href={`/sermon/${sermon.slug}`}
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-sm text-white rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer"
+                          >
+                            <PlayCircle className="w-4 h-4" />
+                            Read Sermon
+                          </Link>
+                          <button className="inline-flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                            <Download className="w-4 h-4" />
+                            Download PDF
+                          </button>
+                        </>
+                      )}
+                      <Link 
+                        href={`/sermon/${sermon.slug}`}
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
+                      >
+                        Read Transcript
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -178,34 +385,39 @@ export default function SermonsPage() {
 
       {/* Pagination */}
       <div className="mt-12 pt-8 border-t border-gray-200">
-        <div className="flex justify-center items-center space-x-4">
-          <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
-            Previous
-          </button>
-          
-          <div className="flex space-x-2">
-            {[1, 2, 3, 4, 5].map((page) => (
-              <button
-                key={page}
-                className={`px-3 py-1 text-sm rounded-md ${
-                  page === 1
-                    ? 'bg-[#0477BF] text-white'
-                    : 'text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {page}
-              </button>
-            ))}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="text-gray-600">
+            Showing 1-6 of {sermons.length}+ sermons
           </div>
-          
-          <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50">
-            Next
-          </button>
+          <div className="flex items-center space-x-2">
+            <button className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+              Previous
+            </button>
+            
+            <div className="flex space-x-1">
+              {[1, 2, 3, 4, 5].map((page) => (
+                <button
+                  key={page}
+                  className={`px-3 py-1.5 text-sm rounded-lg ${
+                    page === 1
+                      ? 'bg-blue-600 text-white'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+              <span className="px-2 py-1">...</span>
+              <button className="px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">
+                25
+              </button>
+            </div>
+            
+            <button className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
+              Next
+            </button>
+          </div>
         </div>
-        
-        <p className="text-center text-gray-500 text-sm mt-4">
-          Page 1 of 5
-        </p>
       </div>
     </div>
   );

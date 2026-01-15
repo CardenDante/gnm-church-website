@@ -131,9 +131,9 @@ export default function MBCPage() {
               ))}
             </tbody>
           </table>
-        </div>
+        </div> 
       </section>
     </div>
   );
-} 
+}
 

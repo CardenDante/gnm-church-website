@@ -21,7 +21,7 @@ export default function CurriculumPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold text-[#0477BF] mb-4">
           Curriculum and Delivery
-        </h2>
+        </h2> 
         <div className="space-y-4 text-gray-700 leading-relaxed">
           <p>
             The curriculum of each unit shall contain the course outline, course content, expected learning outcomes, and references.
