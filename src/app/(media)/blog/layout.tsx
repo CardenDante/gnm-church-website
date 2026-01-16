@@ -23,30 +23,30 @@ import {
 } from 'lucide-react';
 
 const blogCategories = [
-  { 
-    name: 'Spiritual Insights', 
-    href: '/media/blog/insights',
+  {
+    name: 'Spiritual Insights',
+    href: '/blog/insights',
     icon: BookOpen,
-    color: 'from-purple-500 to-purple-600',
+    color: 'from-blue-500 to-blue-600',
     count: '45'
   },
-  { 
-    name: 'Personal Testimonies', 
-    href: '/media/blog/testimonies',
+  {
+    name: 'Personal Testimonies',
+    href: '/blog/testimonies',
     icon: Feather,
     color: 'from-green-500 to-green-600',
     count: '32'
   },
-  { 
-    name: 'Biblical Studies', 
-    href: '/media/blog/studies',
+  {
+    name: 'Biblical Studies',
+    href: '/blog/studies',
     icon: BookOpen,
     color: 'from-blue-500 to-blue-600',
     count: '28'
   },
-  { 
-    name: 'Daily Devotions', 
-    href: '/media/blog/devotions',
+  {
+    name: 'Daily Devotions',
+    href: '/blog/devotions',
     icon: Sunrise,
     color: 'from-orange-500 to-orange-600',
     count: '56'
@@ -67,29 +67,26 @@ export default function BlogLayout({
   const pathname = usePathname();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gray-50 pb-12">
       {/* Creative Header */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+      <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 to-cyan-800">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             backgroundSize: '60px 60px'
           }}></div>
         </div>
-        
+
         <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center">
-              {/* <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full mb-8">
-                <Feather className="w-10 h-10 text-white" />
-              </div> */}
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
                 Spiritual Insights
               </h1>
               <p className="text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
                 Deep biblical reflections, personal testimonies, and spiritual teachings for your journey of faith
               </p>
-              
+
               {/* Reading Time Indicator */}
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
                 <Clock className="w-4 h-4 text-white" />
@@ -97,7 +94,7 @@ export default function BlogLayout({
                 <Coffee className="w-4 h-4 text-white" />
               </div>
 
-            
+
             </div>
           </div>
         </div>
@@ -106,15 +103,15 @@ export default function BlogLayout({
       {/* Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
         <div className="flex flex-col lg:flex-row gap-8">
-          
+
           {/* Main Content */}
           <div className="lg:flex-1">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
               <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-purple-100 rounded-lg">
-                      <BookOpen className="w-5 h-5 text-purple-600" />
+                    <div className="p-2 bg-blue-100 rounded-lg">
+                      <BookOpen className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
                       <h2 className="text-xl font-bold text-gray-800">Latest Articles</h2>
@@ -128,11 +125,11 @@ export default function BlogLayout({
                       </div>
                       <input
                         type="search"
-                        className="pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent w-56"
+                        className="pl-10 pr-4 py-2.5 text-gray-600 border  placeholder-gray-500 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-56"
                         placeholder="Search articles..."
                       />
                     </div>
-                   
+
                   </div>
                 </div>
               </div>
@@ -140,24 +137,24 @@ export default function BlogLayout({
             </div>
           </div>
 
-          {/* Sidebar - Different Style */}
+          {/* Sidebar */}
           <div className="lg:w-96 space-y-8">
             {/* Featured Writers */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-xl p-6 border border-purple-200">
+            <div className="bg-white rounded-2xl shadow-lg p-6 border border-blue-200">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-                  <Users className="w-5 h-5 text-purple-600" />
+                  <Users className="w-5 h-5 text-blue-600" />
                   Featured Writers
                 </h3>
-                <span className="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded-full">
+                <span className="text-xs font-medium bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
                   Top Contributors
                 </span>
               </div>
               <div className="space-y-4">
                 {featuredWriters.map((writer, index) => (
-                  <div key={index} className="p-3 bg-white rounded-lg border border-purple-100 hover:border-purple-200 transition-colors">
+                  <div key={index} className="p-3 bg-white rounded-lg border border-blue-100 hover:border-blue-200 transition-colors">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
                         {writer.name.charAt(0)}
                       </div>
                       <div className="flex-1">
@@ -165,23 +162,18 @@ export default function BlogLayout({
                         <p className="text-xs text-gray-600">{writer.role}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-sm font-bold text-purple-600">{writer.articles}</div>
+                        <div className="text-sm font-bold text-blue-600">{writer.articles}</div>
                         <div className="text-xs text-gray-500">articles</div>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <Link 
-                href="/media/blog/writers"
-                className="inline-flex items-center justify-center w-full mt-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2.5 rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-all"
-              >
-                Meet All Writers
-              </Link>
+
             </div>
 
             {/* Reading List */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200">
+            <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 bg-blue-100 rounded-lg">
                   <Bookmark className="w-5 h-5 text-blue-600" />
@@ -220,29 +212,28 @@ export default function BlogLayout({
             </div>
 
             {/* Subscribe for Updates */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-xl p-6 text-white">
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
-                  <MessageSquare className="w-6 h-6" />
+            <div className="bg-white rounded-2xl shadow-lg p-6 ">
+              <div className="text-center text-gray-700">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full mb-4">
+                  <MessageSquare className="w-6 h-6 text-gray-500" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Join the Conversation</h3>
-                <p className="text-sm text-gray-300 mb-4">Subscribe to receive new articles and join discussions</p>
+                <h3 className="text-lg font-bold  mb-2">Join the Conversation</h3>
+                <p className="text-sm text-gray-500 mb-4">Subscribe to receive new articles and join discussions</p>
                 <div className="space-y-3">
                   <input
                     type="email"
                     placeholder="Your email address"
-                    className="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
+                    className="w-full px-4 py-2 rounded-lg border border-blue-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
                   />
-                  <button className="w-full bg-white text-gray-900 py-2.5 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                  <button className="w-full bg-blue-100 text-gray-900 py-2.5 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                     Subscribe Now
                   </button>
                 </div>
-                <p className="text-xs text-gray-400 mt-3">Weekly digest • No spam</p>
               </div>
             </div>
 
             {/* Popular Tags */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200">
+            <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
                 <Tag className="w-5 h-5 text-gray-600" />
                 Popular Topics
@@ -251,16 +242,16 @@ export default function BlogLayout({
                 {['Salvation', 'Grace', 'Faith', 'Prayer', 'Bible Study', 'Testimony', 'Ministry', 'Leadership', 'Healing', 'Hope'].map((tag) => (
                   <Link
                     key={tag}
-                    href={`/media/blog/tag/${tag.toLowerCase()}`}
+                    href={`/blog`}
                     className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors"
                   >
                     {tag}
                   </Link>
                 ))}
               </div>
-              <Link 
-                href="/media/blog/tags"
-                className="inline-flex items-center mt-6 text-sm font-medium text-purple-600 hover:text-purple-800 hover:underline"
+              <Link
+                href="/blog"
+                className="inline-flex items-center mt-6 text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline"
               >
                 View All Topics
                 <ArrowRight className="w-4 h-4 ml-1" />

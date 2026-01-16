@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { BookOpen, Mic, GraduationCap, Landmark, Star } from 'lucide-react';
 
 const GreetingsPage = () => {
   const profileAchievements = [
@@ -25,7 +26,7 @@ const GreetingsPage = () => {
   return (
     <main>
       {/* Hero Section */}
-      <div className="relative py-20 bg-gradient-to-r from-blue-900 to-cyan-800 text-white">
+      <div className="relative py-12 bg-gradient-to-r from-blue-900 to-cyan-800  text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Greetings Message</h1>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
@@ -55,10 +56,10 @@ const GreetingsPage = () => {
           {/* Left Column: Message Content */}
           <div className="lg:col-span-2">
             {/* Founder Introduction */}
-            <div className="bg-white rounded-2xl md:shadow-lg p-8 mb-8">
+            <div className="bg-white rounded-2xl md:shadow-md p-8 mb-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
                 <div className="order-2 lg:order-1">
-                  <div className="relative aspect-square rounded-xl overflow-hidden md:shadow-lg">
+                  <div className="relative aspect-square rounded-xl overflow-hidden md:shadow-md">
                     <Image
                       src="/profiles/ocksoo.jpg"
                       alt="Pastor Park Ock Soo"
@@ -91,7 +92,9 @@ const GreetingsPage = () => {
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-[#0477BF] to-cyan-600 p-6 rounded-xl text-white">
-                  <div className="text-4xl mb-4 text-center">✝️</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 mx-auto mb-4">
+                    <path d="M11 2h2v7h5v2h-5v11h-2v-11h-5v-2h5z" />
+                  </svg>
                   <blockquote className="text-lg italic leading-relaxed text-center mb-4">
                     "There are almost no incidents of divorce inside the mission because God holds and keeps our hearts to give us happy families."
                   </blockquote>
@@ -100,29 +103,14 @@ const GreetingsPage = () => {
                   </cite>
                 </div>
               </div>
-            </div>
-
-            {/* Spiritual Life Section */}
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl md:shadow-lg p-8 mb-8">
-              <div className="text-center mb-6">
+                <div className="text-center my-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">True Spiritual Life</h3>
                 <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
                   When we are saved from sin, born again, and accompany Jesus, He leads us to rest, peace, and joy. That is to say, we will live true spiritual lives where God works among us. I hope that you will receive the forgiveness of sins and enjoy a peaceful and blessed life by coming to the Good News Mission.
                 </p>
               </div>
-
-              <div className="text-center mt-8">
-                <Link
-                  href="/about/beliefs"
-                  className="inline-flex items-center bg-[#0477BF] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#0A37BF] transition-all duration-300 md:shadow-lg hover:shadow-xl"
-                >
-                  Learn More About Our Mission
-                  <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
             </div>
+
 
           </div>
 
@@ -130,28 +118,28 @@ const GreetingsPage = () => {
           <div className="space-y-8">
 
             {/* Founder Quick Facts */}
-            <div className="bg-gradient-to-br from-[#0477BF] to-cyan-600 rounded-2xl md:shadow-lg p-6 text-white">
+            <div className="bg-white border-blue-100 rounded-2xl md:shadow-md p-6 text-gray-700">
               <h2 className="text-xl font-bold mb-4">Founder at a Glance</h2>
               <div className="space-y-4">
                 <div>
                   <h3 className="font-semibold mb-1">Pastor Park Ock Soo</h3>
-                  <p className="text-blue-100 text-sm">Founder & Spiritual Leader</p>
+                  <p className="text-[#0477BF] text-sm">Founder & Spiritual Leader</p>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center">
-                    <span className="text-yellow-300 mr-2">⭐</span>
+                    <Star className="w-4 h-4 text-yellow-300 fill-yellow-300 mr-2" />
                     <span>38 Published Books</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-yellow-300 mr-2">⭐</span>
+                    <Star className="w-4 h-4 text-yellow-300 fill-yellow-300 mr-2" />
                     <span>International Ministry Reach</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-yellow-300 mr-2">⭐</span>
+                    <Star className="w-4 h-4 text-yellow-300 fill-yellow-300 mr-2" />
                     <span>Multiple Educational Initiatives</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-yellow-300 mr-2">⭐</span>
+                    <Star className="w-4 h-4 text-yellow-300 fill-yellow-300 mr-2" />
                     <span>15+ Major Awards & Honors</span>
                   </div>
                 </div>
@@ -159,14 +147,14 @@ const GreetingsPage = () => {
             </div>
 
             {/* Related Messages */}
-            <div className="bg-white rounded-2xl md:shadow-lg p-6">
+            <div className="bg-white rounded-2xl md:shadow-md p-6">
               <h2 className="text-xl font-bold text-gray-800 mb-4">More From Our Leadership</h2>
               <div className="space-y-4">
                 <Link
                   href="/sermons"
-                  className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                  className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                 >
-                  <span className="text-2xl mr-3">📖</span>
+                  <BookOpen className="w-6 h-6 mr-3 text-[#0477BF]" />
                   <div>
                     <div className="font-medium text-gray-800">Latest Sermons</div>
                     <div className="text-sm text-gray-600">Biblical teaching from our pastors</div>
@@ -174,9 +162,9 @@ const GreetingsPage = () => {
                 </Link>
                 <Link
                   href="/testimonies"
-                  className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                  className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                 >
-                  <span className="text-2xl mr-3">🎤</span>
+                  <Mic className="w-6 h-6 mr-3 text-[#0477BF]" />
                   <div>
                     <div className="font-medium text-gray-800">Testimonies</div>
                     <div className="text-sm text-gray-600">Stories of changed lives</div>
@@ -184,9 +172,9 @@ const GreetingsPage = () => {
                 </Link>
                 <Link
                   href="/mbc"
-                  className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                  className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                 >
-                  <span className="text-2xl mr-3">🎓</span>
+                  <GraduationCap className="w-6 h-6 mr-3 text-[#0477BF]" />
                   <div>
                     <div className="font-medium text-gray-800">Bible College</div>
                     <div className="text-sm text-gray-600">Theological education</div>
@@ -194,9 +182,9 @@ const GreetingsPage = () => {
                 </Link>
                 <Link
                   href="/departments"
-                  className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                  className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                 >
-                  <span className="text-2xl mr-3">🏛️</span>
+                  <Landmark className="w-6 h-6 mr-3 text-[#0477BF]" />
                   <div>
                     <div className="font-medium text-gray-800">Our Ministries</div>
                     <div className="text-sm text-gray-600">Departments & services</div>
@@ -206,7 +194,7 @@ const GreetingsPage = () => {
             </div>
 
             {/* Call to Action */}
-            <div className="bg-white rounded-2xl md:shadow-lg p-6 border-2 border-blue-100">
+            <div className="bg-white rounded-2xl md:shadow-md p-6 border-2 border-blue-100">
               <h2 className="text-xl font-bold text-gray-800 mb-4">Experience True Spiritual Life</h2>
               <p className="text-gray-600 mb-4 text-sm">
                 Join us in discovering the peace and joy that comes from receiving forgiveness of sins and living in faith.
@@ -227,40 +215,18 @@ const GreetingsPage = () => {
               </div>
             </div>
 
-            {/* Stats Card */}
-            <div className="bg-white rounded-2xl md:shadow-lg p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-4">Global Impact</h2>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-[#0477BF]">38</div>
-                  <div className="text-xs text-gray-600">Books Published</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-[#0477BF]">15+</div>
-                  <div className="text-xs text-gray-600">Awards & Honors</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-[#0477BF]">30+</div>
-                  <div className="text-xs text-gray-600">Years Ministry</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-[#0477BF]">Global</div>
-                  <div className="text-xs text-gray-600">Reach & Influence</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
 
         {/* Achievements Section */}
-        <div className="bg-white rounded-2xl md:shadow-lg mt-6 p-8">
+        <div className="bg-white rounded-2xl md:shadow-md mt-6 p-8">
           <h2 className="text-2xl font-bold text-[#0477BF] mb-4 text-center">Pastor Park Ock Soo Profile</h2>
           <p className="text-gray-600 text-center mb-8">Founder and spiritual leader of the Good News Mission</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {profileAchievements.map((achievement) => (
-              <div key={achievement.number} className="flex items-start p-4 bg-gray-50 hover:bg-blue-50 rounded-lg transition-colors border border-gray-100">
+              <div key={achievement.number} className="flex items-start p-4 bg-blue-50 rounded-lg transition-colors border border-gray-100">
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-[#0477BF] to-cyan-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1">
                   {achievement.number}
                 </div>
@@ -296,4 +262,3 @@ const GreetingsPage = () => {
 };
 
 export default GreetingsPage;
-

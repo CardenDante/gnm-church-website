@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Dot } from 'lucide-react';
+import { Dot, Mail, Phone, Building2, Monitor, Users, Handshake } from 'lucide-react';
 
 const mbcNavItems = [
     {
@@ -167,7 +167,7 @@ export default function MBCLayout({
     return (
         <div className="min-h-screen">
             {/* Dynamic Header */}
-            <div className={`head_title_area text-center py-16 bg-gradient-to-r ${getGradientClass()} text-white`}>
+            <div className={` text-center bg-gradient-to-r from-blue-900 to-cyan-800 py-12 text-white`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">
                         {activeItem}
@@ -184,7 +184,7 @@ export default function MBCLayout({
 
                     {/* Main Content Area */}
                     <div className="lg:flex-1 order-2 lg:order-1">
-                        <div className=" rounded-2xl shadow md:shadow-lg overflow-hidden">
+                        <div className=" rounded-2xl shadow md:shadow-md overflow-hidden">
                             {children}
                         </div>
                     </div>
@@ -193,7 +193,7 @@ export default function MBCLayout({
                     <div className="lg:w-96 order-1 lg:order-2 space-y-8">
 
                         {/* Navigation Card */}
-                        <div className="bg-white rounded-2xl shadow md:shadow-lg p-6">
+                        <div className="bg-white rounded-2xl shadow md:shadow-md p-6">
                             <h3 className="text-xl font-bold text-gray-800 mb-5 pb-3 border-b border-gray-200">
                                 MBC Programs
                             </h3>
@@ -227,19 +227,19 @@ export default function MBCLayout({
                                 <h4 className="font-semibold text-gray-800 mb-3">Admissions Office</h4>
                                 <div className="space-y-3 text-sm">
                                     <div className="flex items-start">
-                                        <span className="text-gray-500 mr-2">📧</span>
+                                        <Mail className="w-5 h-5 text-gray-500 mr-2 flex-shrink-0 mt-0.5" />
                                         <a href="mailto:mbc@goodnews.or.ke" className="text-[#0477BF] hover:underline">
                                             mbc@goodnews.or.ke
                                         </a>
                                     </div>
                                     <div className="flex items-start">
-                                        <span className="text-gray-500 mr-2">📱</span>
+                                        <Phone className="w-5 h-5 text-gray-500 mr-2 flex-shrink-0 mt-0.5" />
                                         <a href="tel:0704333111" className="text-[#0477BF] hover:underline">
                                             0704 333 111
                                         </a>
                                     </div>
                                     <div className="flex items-start">
-                                        <span className="text-gray-500 mr-2">🏛️</span>
+                                        <Building2 className="w-5 h-5 text-gray-500 mr-2 flex-shrink-0 mt-0.5" />
                                         <span className="text-gray-600">Thika Road, Behind Safari Park, Nairobi</span>
                                     </div>
                                 </div>
@@ -253,17 +253,17 @@ export default function MBCLayout({
                         </div>
 
                         {/* Dynamic Content Card */}
-                        <div className="bg-gradient-to-br from-[#0477BF] to-cyan-600 rounded-2xl md:shadow-lg p-6 text-white">
+                        <div className="bg-white rounded-2xl md:shadow-md p-6 text-gray-800">
                             <h3 className="text-xl font-bold mb-3">{currentContent.title}</h3>
-                            <p className="text-blue-100 mb-4 text-sm">{currentContent.description}</p>
+                            <p className="text-gray-700 mb-4 text-sm">{currentContent.description}</p>
 
                             <div className="mb-6">
-                                <h4 className="font-semibold mb-2 text-blue-200">Key Highlights</h4>
+                                <h4 className="font-semibold mb-2 text-gray-600">Key Highlights</h4>
                                 <ul className="space-y-2 items-center">
                                     {currentContent.highlights.map((item, index) => (
                                         <li key={index} className="flex items-center justify-start">
-                                            <span className="text-yellow-300 mr-1 mt-1"><Dot /> </span>
-                                            <span className="text-blue-100 text-sm">{item}</span>
+                                            <span className="text-blue-300 mr-1 mt-1"><Dot /> </span>
+                                            <span className="text-gray-500 text-sm">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -271,23 +271,23 @@ export default function MBCLayout({
 
                             <div className="grid grid-cols-2 gap-3 mb-6">
                                 {currentContent.stats.map((stat, index) => (
-                                    <div key={index} className="bg-white/10 rounded-lg p-3 text-center backdrop-blur-sm">
+                                    <div key={index} className="bg-white rounded-lg p-3 text-center backdrop-blur-sm">
                                         <div className="text-xl font-bold">{stat.value}</div>
-                                        <div className="text-xs text-blue-200 mt-1">{stat.label}</div>
+                                        <div className="text-xs text-gray-400 mt-1">{stat.label}</div>
                                     </div>
                                 ))}
                             </div>
 
                             <Link
                                 href="/contact"
-                                className="block w-full bg-white text-[#0477BF] text-center py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors md:shadow-lg"
+                                className="block w-full bg-blue-100 text-[#0477BF] text-center py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors md:shadow-md"
                             >
                                 Apply for This Program
                             </Link>
                         </div>
 
                         {/* About MBC & Founder  */}
-                        <div className="bg-white rounded-2xl shadow md:shadow-lg p-6">
+                        <div className="bg-white rounded-2xl shadow md:shadow-md p-6">
                             <h3 className="text-xl font-bold text-gray-800 mb-4">About MBC & Founder</h3>
 
                             <div className="space-y-4">
@@ -318,15 +318,15 @@ export default function MBCLayout({
                         </div>
 
                         {/* Related Departments & Resources  */}
-                        <div className="bg-white rounded-2xl shadow md:shadow-lg p-6">
+                        <div className="bg-white rounded-2xl shadow md:shadow-md p-6">
                             <h3 className="text-xl font-bold text-gray-800 mb-4">Related Departments</h3>
 
                             <div className="space-y-3">
                                 <Link
                                     href="/departments/college"
-                                    className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                                    className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                                 >
-                                    <span className="text-2xl mr-3">🏛️</span>
+                                    <Building2 className="w-6 h-6 text-gray-600 mr-3 group-hover:text-[#0477BF]" />
                                     <div>
                                         <div className="font-medium text-gray-800">Mahanaim College</div>
                                         <div className="text-sm text-gray-600">Secondary & post-secondary education</div>
@@ -335,9 +335,9 @@ export default function MBCLayout({
 
                                 <Link
                                     href="/departments/broadcasting"
-                                    className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                                    className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                                 >
-                                    <span className="text-2xl mr-3">📺</span>
+                                    <Monitor className="w-6 h-6 text-gray-600 mr-3 group-hover:text-[#0477BF]" />
                                     <div>
                                         <div className="font-medium text-gray-800">GBS TV</div>
                                         <div className="text-sm text-gray-600">Good News Broadcasting System</div>
@@ -346,9 +346,9 @@ export default function MBCLayout({
 
                                 <Link
                                     href="/departments/youth"
-                                    className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                                    className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                                 >
-                                    <span className="text-2xl mr-3">👥</span>
+                                    <Users className="w-6 h-6 text-gray-600 mr-3 group-hover:text-[#0477BF]" />
                                     <div>
                                         <div className="font-medium text-gray-800">IYF Kenya</div>
                                         <div className="text-sm text-gray-600">International Youth Fellowship</div>
@@ -357,9 +357,9 @@ export default function MBCLayout({
 
                                 <Link
                                     href="/departments/leaders"
-                                    className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                                    className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                                 >
-                                    <span className="text-2xl mr-3">🤝</span>
+                                    <Handshake className="w-6 h-6 text-gray-600 mr-3 group-hover:text-[#0477BF]" />
                                     <div>
                                         <div className="font-medium text-gray-800">CLF</div>
                                         <div className="text-sm text-gray-600">Christian Leaders Fellowship</div>
@@ -398,45 +398,6 @@ export default function MBCLayout({
                             </div>
                         </div>
 
-                        {/* Application Timeline Card */}
-                        <div className="bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl md:shadow-lg p-6 text-gray-800">
-                            <h3 className="text-xl font-bold mb-3">Application Timeline</h3>
-                            <div className="space-y-3 text-sm">
-                                <div className="flex items-center">
-                                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3">
-                                        1
-                                    </div>
-                                    <span>Submit online application</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3">
-                                        2
-                                    </div>
-                                    <span>Interview with admissions team</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3">
-                                        3
-                                    </div>
-                                    <span>Receive acceptance letter</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3">
-                                        4
-                                    </div>
-                                    <span>Enroll and begin classes</span>
-                                </div>
-                            </div>
-                            <div className="mt-6 text-center">
-                                <p className="text-amber-100 text-sm mb-2"> intake Ongoing </p>
-                                <Link
-                                    href="/contact"
-                                    className="inline-block bg-white text-amber-600 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
-                                >
-                                    Check Availability
-                                </Link>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

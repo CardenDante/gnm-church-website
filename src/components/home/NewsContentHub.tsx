@@ -203,13 +203,13 @@ const NewsContentHub = () => {
     {
       title: '[Life] Becoming Friends',
       date: '2025.08.27',
-      image:'/Slider/slider-1.jpg',
+      image: '/Slider/slider-1.jpg',
       href: 'http://www.gndaily.kr/news/articleView.html?idxno=50068'
     },
     {
       title: '[Opinion] Success Investment for Three Sisters',
       date: '2025.08.28',
-      image:'/Slider/slider-2.jpg',
+      image: '/Slider/slider-2.jpg',
       href: 'http://www.gndaily.kr/news/articleView.html?idxno=50098'
     },
     {
@@ -230,7 +230,7 @@ const NewsContentHub = () => {
     {
       title: '[Interview] Thanks to English, I have more things I want to do and people I want to meet',
       date: '2024.12.03',
-      image:'/Slider/slider-5.jpg',
+      image: '/Slider/slider-5.jpg',
       href: 'http://www.gndaily.kr/news/articleView.html?idxno=48778'
     }
   ];
@@ -238,11 +238,11 @@ const NewsContentHub = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        
+
         {/* Left Column - Main News Content (9/12) */}
         <div className="lg:col-span-9">
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            
+          <div className="bg-[#0A37BF] rounded-xl shadow-lg p-6">
+
             {/* Mobile Notice View */}
             {/* <div className="lg:hidden mb-6">
               <div className="flex items-center justify-between mb-4">
@@ -271,10 +271,10 @@ const NewsContentHub = () => {
               <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                 <Link href="https://www.gndaily.kr/" target="_blank" className="hover:text-[#0A37BF] transition-colors">
                   Mission News
-                  
+
                 </Link>
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Headline News */}
                 <div className="space-y-4">
@@ -334,7 +334,7 @@ const NewsContentHub = () => {
                   Good News Today
                 </Link>
               </h2>
-              
+
               <div id="mySwiper-today" className="swiper">
                 <div className="swiper-wrapper">
                   {videos.map((video, index) => (
@@ -369,16 +369,16 @@ const NewsContentHub = () => {
 
         {/* Right Column - Magazine & Kids Content (3/12) */}
         <div className="lg:col-span-3 space-y-6">
-          
+
           {/* Monthly Magazine - 2x2 Grid */}
           <div className="bg-white rounded-xl shadow-lg p-4">
             <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
               <Link href="https://www.gndaily.kr/news/articleList.html?sc_section_code=S1N12&view_type=sm" target="_blank" className="hover:text-[#0A37BF] transition-colors">
                 Monthly Good News
-            
+
               </Link>
             </h2>
-            
+
             <div id="mySwiper-monthly" className="swiper">
               <div className="swiper-wrapper">
                 {monthlyMagazine.map((article, index) => (
@@ -414,7 +414,7 @@ const NewsContentHub = () => {
                 Kids Mind
               </Link>
             </h2>
-            
+
             <div id="mySwiper-kids" className="swiper">
               <div className="swiper-wrapper">
                 {kidsContent.map((article, index) => (
@@ -445,9 +445,9 @@ const NewsContentHub = () => {
 
           {/* Documentary Banner */}
           <div>
-            <Link 
-              href="https://www.youtube.com/watch?v=2t1qgshEMUs&list=PL9pW9HArv6spU1UrJO3MuRYqFoqQmekB3" 
-              target="_blank" 
+            <Link
+              href="https://www.youtube.com/watch?v=2t1qgshEMUs&list=PL9pW9HArv6spU1UrJO3MuRYqFoqQmekB3"
+              target="_blank"
               className="block group"
             >
               <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">

@@ -66,10 +66,10 @@ export default function CLFPage() {
     <div className="p-8">
       {/* Hero Section */}
       <div className="mb-10">
-        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-100">
+        <div className="py-8 border-b border-[#0C4F9D]/20">
           <div className="flex items-center gap-3 mb-2">
-            <div className="p-2 bg-indigo-100 rounded-lg">
-              <Crown className="w-6 h-6 text-indigo-600" />
+            <div className="p-2 bg-[#0C4F9D]/10 rounded-lg">
+              <Crown className="w-6 h-6 text-[#0C4F9D]" />
             </div>
             <h1 className="text-3xl font-bold text-gray-800">
               Christian Leaders Fellowship
@@ -86,9 +86,9 @@ export default function CLFPage() {
         <div>
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-              <div className="w-2 h-6 bg-indigo-600 rounded"></div>
+              <div className="w-2 h-6 bg-[#0C4F9D] rounded"></div>
               <div className="flex items-center gap-2">
-                <Target className="w-5 h-5 text-indigo-600" />
+                <Target className="w-5 h-5 text-[#0C4F9D]" />
                 About CLF
               </div>
             </h2>
@@ -104,20 +104,20 @@ export default function CLFPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-              <div className="w-2 h-6 bg-indigo-600 rounded"></div>
+              <div className="w-2 h-6 bg-[#0C4F9D] rounded"></div>
               <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-indigo-600" />
+                <Star className="w-5 h-5 text-[#0C4F9D]" />
                 Our Mission
               </div>
             </h2>
-            <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-xl p-6">
+            <div className="bg-gradient-to-r from-[#0C4F9D] to-[#02C0C3] text-white rounded-xl p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <div className="text-xl font-bold">"Let's go back to the Bible and only by faith."</div>
               </div>
-              <p className="text-indigo-100">
+              <p className="text-white/90">
                 This motto guides everything we do - from our fellowship meetings to our joint mission efforts. We believe that unity in Christ comes through shared commitment to Scripture and faith.
               </p>
             </div>
@@ -125,9 +125,9 @@ export default function CLFPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
-              <div className="w-2 h-6 bg-indigo-600 rounded"></div>
+              <div className="w-2 h-6 bg-[#0C4F9D] rounded"></div>
               <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-indigo-600" />
+                <Users className="w-5 h-5 text-[#0C4F9D]" />
                 Fellowship Activities
               </div>
             </h2>
@@ -135,9 +135,9 @@ export default function CLFPage() {
               {fellowshipActivities.map((activity, index) => {
                 const Icon = activity.icon;
                 return (
-                  <div key={index} className="bg-white border border-gray-200 rounded-xl p-4 hover:border-indigo-300 hover:shadow-md transition-all group">
-                    <div className="p-2 bg-indigo-100 rounded-lg w-fit mb-2 group-hover:bg-indigo-200 transition-colors">
-                      <Icon className="w-5 h-5 text-indigo-600" />
+                  <div key={index} className="bg-white border border-gray-200 rounded-xl p-4 hover:border-[#0C4F9D]/50 hover:shadow-md transition-all group">
+                    <div className="p-2 bg-[#0C4F9D]/10 rounded-lg w-fit mb-2 group-hover:bg-[#0C4F9D]/20 transition-colors">
+                      <Icon className="w-5 h-5 text-[#0C4F9D]" />
                     </div>
                     <h3 className="font-bold text-gray-800 text-sm mb-1">{activity.activity}</h3>
                     <p className="text-xs text-gray-600">{activity.description}</p>
@@ -152,24 +152,24 @@ export default function CLFPage() {
         <div>
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-              <div className="w-2 h-6 bg-indigo-600 rounded"></div>
+              <div className="w-2 h-6 bg-[#0C4F9D] rounded"></div>
               <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-indigo-600" />
+                <Award className="w-5 h-5 text-[#0C4F9D]" />
                 Membership Benefits
               </div>
             </h2>
-            <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+            <div className="bg-[#0C4F9D]/5 rounded-xl p-6 border border-[#0C4F9D]/20">
               <ul className="space-y-3">
                 {membershipBenefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-indigo-500 mt-0.5 flex-shrink-0" />
+                    <Shield className="w-5 h-5 text-[#0C4F9D] mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">{benefit}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 p-4 bg-white rounded-lg border border-indigo-100">
+              <div className="mt-6 p-4 bg-white rounded-lg border border-[#0C4F9D]/20">
                 <div className="flex items-center gap-2">
-                  <Network className="w-4 h-4 text-indigo-600" />
+                  <Network className="w-4 h-4 text-[#0C4F9D]" />
                   <p className="text-sm text-gray-600">
                     CLF members gain access to a supportive community of like-minded leaders committed to biblical faithfulness and effective ministry.
                   </p>
@@ -180,60 +180,60 @@ export default function CLFPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
-              <div className="w-2 h-6 bg-indigo-600 rounded"></div>
+              <div className="w-2 h-6 bg-[#0C4F9D] rounded"></div>
               <div className="flex items-center gap-2">
-                <Globe className="w-5 h-5 text-indigo-600" />
+                <Globe className="w-5 h-5 text-[#0C4F9D]" />
                 Global Reach
-              </div>
+              </div> 
             </h2>
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-indigo-50 transition-colors group">
+              <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-[#0C4F9D]/5 transition-colors group">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-indigo-100 rounded-lg">
-                    <Languages className="w-4 h-4 text-indigo-600" />
+                  <div className="p-2 bg-[#0C4F9D]/10 rounded-lg">
+                    <Languages className="w-4 h-4 text-[#0C4F9D]" />
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Cross-Cultural</p>
                     <p className="text-sm text-gray-600">Multiple languages & ethnicities</p>
                   </div>
                 </div>
-                <Globe className="w-5 h-5 text-indigo-600" />
+                <Globe className="w-5 h-5 text-[#0C4F9D]" />
               </div>
-              <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-indigo-50 transition-colors group">
+              <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-[#0C4F9D]/5 transition-colors group">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-indigo-100 rounded-lg">
-                    <Church className="w-4 h-4 text-indigo-600" />
+                  <div className="p-2 bg-[#0C4F9D]/10 rounded-lg">
+                    <Church className="w-4 h-4 text-[#0C4F9D]" />
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Cross-Denominational</p>
                     <p className="text-sm text-gray-600">Various church traditions united</p>
                   </div>
                 </div>
-                <Cross className="w-5 h-5 text-indigo-600" />
+                <Cross className="w-5 h-5 text-[#0C4F9D]" />
               </div>
-              <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-indigo-50 transition-colors group">
+              <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-[#0C4F9D]/5 transition-colors group">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-indigo-100 rounded-lg">
-                    <Target className="w-4 h-4 text-indigo-600" />
+                  <div className="p-2 bg-[#0C4F9D]/10 rounded-lg">
+                    <Target className="w-4 h-4 text-[#0C4F9D]" />
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Mission Focused</p>
                     <p className="text-sm text-gray-600">Gospel propagation worldwide</p>
                   </div>
                 </div>
-                <Megaphone className="w-5 h-5 text-indigo-600" />
+                <Megaphone className="w-5 h-5 text-[#0C4F9D]" />
               </div>
             </div>
           </section>
 
-          <section className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl p-6 text-white">
+          <section className="bg-gradient-to-r from-[#0C4F9D] to-[#02C0C3] rounded-xl p-6 text-white">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-white/20 rounded-lg">
                 <GraduationCap className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold">Join CLF Kenya</h3>
             </div>
-            <p className="text-indigo-100 mb-6">
+            <p className="text-white/90 mb-6">
               Connect with Christian leaders across Kenya who share your commitment to biblical faithfulness and effective ministry.
             </p>
             <div className="space-y-3">
@@ -241,7 +241,7 @@ export default function CLFPage() {
                 href="https://clfkenya.org" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full bg-white text-indigo-600 text-center py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="flex items-center justify-center gap-2 w-full bg-white text-[#0C4F9D] text-center py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 Visit CLF Kenya Website
                 <ArrowRight className="w-4 h-4" />

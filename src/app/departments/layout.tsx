@@ -80,7 +80,7 @@ const departmentNavItems = [
 // Dynamic content for each department
 const departmentContent = {
   '/departments/broadcasting': {
-    color: 'from-blue-500 to-blue-700',
+    color: 'from-[#0C4F9D] to-[#02C0C3]',
     icon: Radio,
     stats: [
       { label: 'Launched', value: '2009', icon: Calendar },
@@ -95,7 +95,7 @@ const departmentContent = {
     ],
   },
   '/departments/medical': {
-    color: 'from-green-500 to-green-700',
+    color: 'from-[#0C4F9D] to-[#02C0C3]',
     icon: Heart,
     stats: [
       { label: 'Volunteers', value: '100+', icon: PeopleIcon },
@@ -110,7 +110,7 @@ const departmentContent = {
     ],
   },
   '/departments/college': {
-    color: 'from-purple-500 to-purple-700',
+    color: 'from-[#0C4F9D] to-[#02C0C3]',
     icon: GraduationCap,
     stats: [
       { label: 'Established', value: '2011', icon: Calendar },
@@ -125,7 +125,7 @@ const departmentContent = {
     ],
   },
   '/departments/school': {
-    color: 'from-amber-500 to-amber-700',
+    color: 'from-[#0C4F9D] to-[#02C0C3]',
     icon: Building,
     stats: [
       { label: 'Levels', value: 'K-12', icon: GraduationCap },
@@ -140,7 +140,7 @@ const departmentContent = {
     ],
   },
   '/departments/youth': {
-    color: 'from-cyan-500 to-cyan-700',
+    color: 'from-[#0C4F9D] to-[#02C0C3]',
     icon: Users,
     stats: [
       { label: 'Members', value: '2,000+', icon: PeopleIcon },
@@ -155,7 +155,7 @@ const departmentContent = {
     ],
   },
   '/departments/leaders': {
-    color: 'from-indigo-500 to-indigo-700',
+    color: 'from-[#0C4F9D] to-[#02C0C3]',
     icon: Target,
     stats: [
       { label: 'Members', value: '500+', icon: PeopleIcon },
@@ -202,11 +202,11 @@ export default function DepartmentsLayout({
 
   const currentContent = departmentContent[pathname as keyof typeof departmentContent] || departmentContent['/departments/broadcasting'];
   const DepartmentIcon = currentContent.icon || Tv;
-
+ 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Enhanced Dynamic Header */}
-      <div className={`bg-gradient-to-r ${currentContent.color} text-white py-16 relative overflow-hidden`}>
+      <div className={`bg-gradient-to-r from-blue-900 to-cyan-800  text-white py-12 relative overflow-hidden`}>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -244,23 +244,6 @@ export default function DepartmentsLayout({
         </div>
       </div>
 
-      {/* Stats Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10">
-        <div className="bg-white rounded-2xl shadow-xl p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {currentContent.stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-50 rounded-full mb-3">
-                  <Icon className="w-6 h-6 text-blue-600" />
-                </div>
-                <div className="text-2xl font-bold text-gray-800">{stat.value}</div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
@@ -278,7 +261,7 @@ export default function DepartmentsLayout({
             {/* Navigation Card with Icons */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b border-gray-200 flex items-center gap-2">
-                <Building className="w-5 h-5 text-blue-600" />
+                <Building className="w-5 h-5 text-[#0C4F9D]" />
                 Our Departments
               </h3>
 
@@ -295,16 +278,16 @@ export default function DepartmentsLayout({
                         className={`
                           flex items-center p-3 rounded-xl 
                           ${isActive
-                            ? 'bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 shadow-sm'
+                            ? 'bg-gradient-to-r from-[#0C4F9D]/10 to-[#02C0C3]/10 border-2 border-[#0C4F9D]/20 shadow-sm'
                             : 'bg-gray-50 hover:bg-gray-100 border border-gray-100'
                           }
                         `}
                       >
-                        <div className={`p-2 rounded-lg ${isActive ? 'bg-blue-100' : 'bg-gray-100'}`}>
-                          <Icon className={`w-5 h-5 ${isActive ? 'text-blue-600' : 'text-gray-600'}`} />
+                        <div className={`p-2 rounded-lg ${isActive ? 'bg-[#0C4F9D]/10' : 'bg-gray-100'}`}>
+                          <Icon className={`w-5 h-5 ${isActive ? 'text-[#0C4F9D]' : 'text-gray-600'}`} />
                         </div>
                         <div className="flex-1 ml-3">
-                          <div className={`font-medium ${isActive ? 'text-blue-700' : 'text-gray-700'}`}>
+                          <div className={`font-medium ${isActive ? 'text-[#0C4F9D]' : 'text-gray-700'}`}>
                             {item.name}
                           </div>
                           <div className="text-xs text-gray-500 mt-1">{item.shortDesc}</div>
@@ -314,7 +297,7 @@ export default function DepartmentsLayout({
                           href={item.externalLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 hover:underline transition-colors mt-2"
+                          className="flex items-center gap-1 text-xs text-[#0C4F9D] hover:text-[#02C0C3] hover:underline transition-colors mt-2"
                         >
                           <ExternalLink className="w-3 h-3" />
                           {item.externalText}
@@ -344,7 +327,7 @@ export default function DepartmentsLayout({
                 </div>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center mt-4 text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline"
+                  className="inline-flex items-center mt-4 text-sm font-medium text-[#0C4F9D] hover:text-[#02C0C3] hover:underline"
                 >
                   General Inquiries
                   <ArrowRight className="w-4 h-4 ml-1" />
@@ -353,7 +336,7 @@ export default function DepartmentsLayout({
             </div>
 
             {/* Quick Actions Card */}
-            <div className={`bg-gradient-to-br ${currentContent.color} rounded-2xl shadow-lg p-6 text-white`}>
+            <div className={`bg-white rounded-2xl shadow-lg p-6 text-gray-700`}>
               <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                 <Activity className="w-5 h-5" />
                 Quick Actions
@@ -366,7 +349,7 @@ export default function DepartmentsLayout({
                       key={index}
                       href={link.href}
                       target={link.href.startsWith('http') ? '_blank' : '_self'}
-                      className="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors backdrop-blur-sm"
+                      className="flex items-center p-3 bg-blue-50 rounded-lg  transition-colors backdrop-blur-sm"
                     >
                       <Icon className="w-4 h-4 mr-3" />
                       <span className="flex-1">{link.text}</span>
@@ -379,10 +362,10 @@ export default function DepartmentsLayout({
                   );
                 })}
               </div>
-              <div className="mt-6 pt-4 border-t border-white/20">
+              <div className="mt-6 pt-4 border-t border-blue-100">
                 <Link
                   href="/contact"
-                  className="flex items-center justify-center w-full bg-white text-center py-2.5 rounded-lg font-semibold text-gray-800 hover:bg-gray-100 transition-colors gap-2"
+                  className="flex items-center justify-center w-full bg-blue-100 text-center py-2.5 rounded-lg font-semibold text-gray-800  transition-colors gap-2"
                 >
                   <Mail className="w-4 h-4" />
                   Contact This Department
@@ -390,87 +373,11 @@ export default function DepartmentsLayout({
               </div>
             </div>
 
-            {/* Related Ministries Card */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-blue-600" />
-                Related Ministries
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start p-3 bg-blue-50 rounded-lg">
-                  <div className="p-2 bg-blue-100 rounded-lg mr-3">
-                    <Building className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-800">Church Services</p>
-                    <p className="text-sm text-gray-600">Weekly worship and fellowship</p>
-                  </div>
-                </div>
-                <div className="flex items-start p-3 bg-green-50 rounded-lg">
-                  <div className="p-2 bg-green-100 rounded-lg mr-3">
-                    <BookOpen className="w-5 h-5 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-800">MBC Programs</p>
-                    <p className="text-sm text-gray-600">Bible college and theology</p>
-                  </div>
-                </div>
-                <div className="flex items-start p-3 bg-purple-50 rounded-lg">
-                  <div className="p-2 bg-purple-100 rounded-lg mr-3">
-                    <Globe className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-800">Mission Outreach</p>
-                    <p className="text-sm text-gray-600">Community and global missions</p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Department Impact Card */}
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-lg p-6 text-white">
-              <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5" />
-                Department Impact
-              </h3>
-              <p className="text-gray-300 text-sm mb-4">
-                Each department works together to fulfill our mission of spreading the Gospel and serving communities.
-              </p>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center p-2 bg-white/5 rounded-lg">
-                  <span className="text-sm text-gray-300 flex items-center gap-2">
-                    <Radio className="w-4 h-4" />
-                    Media Reach
-                  </span>
-                  <span className="text-sm font-semibold">Nationwide</span>
-                </div>
-                <div className="flex justify-between items-center p-2 bg-white/5 rounded-lg">
-                  <span className="text-sm text-gray-300 flex items-center gap-2">
-                    <School className="w-4 h-4" />
-                    Education Impact
-                  </span>
-                  <span className="text-sm font-semibold">800+ Students</span>
-                </div>
-                <div className="flex justify-between items-center p-2 bg-white/5 rounded-lg">
-                  <span className="text-sm text-gray-300 flex items-center gap-2">
-                    <Users className="w-4 h-4" />
-                    Youth Engagement
-                  </span>
-                  <span className="text-sm font-semibold">2,000+ Youth</span>
-                </div>
-              </div>
-              <Link
-                href="/about"
-                className="inline-flex items-center mt-6 text-sm text-blue-300 hover:text-blue-200 hover:underline"
-              >
-                Learn About Our Full Mission
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </div>
+        
           </div>
         </div>
       </div>
     </div>
   );
 }
-

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Search, Check } from 'lucide-react';
 
 interface Branch {
   name: string;
@@ -56,17 +57,11 @@ export default function BranchesPage() {
   const regions = Object.keys(branchesByRegion);
   const activeBranches = branchesByRegion[activeRegion];
 
-  const quickLinks = [
-    { title: "Find a Church Near You", description: "Locate the nearest branch", href: "#map", icon: "📍" },
-    { title: "Service Times", description: "View all service schedules", href: "#services", icon: "⏰" },
-    { title: "Online Services", description: "Join us virtually", href: "/media/sermons", icon: "📱" },
-    { title: "Plan Your Visit", description: "First-time visitor guide", href: "/visit", icon: "👋" },
-  ];
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-cyan-800 text-white py-16">
+      <div className="py-12 bg-gradient-to-r from-blue-900 to-cyan-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Branch Churches</h1>
@@ -91,27 +86,6 @@ export default function BranchesPage() {
         </div>
       </div>
 
-      {/* Stats Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
-        <div className="bg-white rounded-2xl shadow-xl p-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#0477BF]">32+</div>
-            <div className="text-gray-600 text-sm">Branch Churches</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#0477BF]">15+</div>
-            <div className="text-gray-600 text-sm">Counties Reached</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#0477BF]">5,000+</div>
-            <div className="text-gray-600 text-sm">Weekly Attendees</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#0477BF]">1997</div>
-            <div className="text-gray-600 text-sm">First Branch Established</div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -119,23 +93,6 @@ export default function BranchesPage() {
 
           {/* Left Column: Branches List */}
           <div className="lg:col-span-2">
-            {/* Quick Links */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Quick Links</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {quickLinks.map((link, index) => (
-                  <Link
-                    key={index}
-                    href={link.href}
-                    className="bg-white p-4 rounded-xl shadow-md hover:md:shadow-lg transition-shadow border border-gray-100 text-center group"
-                  >
-                    <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">{link.icon}</div>
-                    <h3 className="font-semibold text-gray-800 text-sm mb-1">{link.title}</h3>
-                    <p className="text-xs text-gray-600">{link.description}</p>
-                  </Link>
-                ))}
-              </div>
-            </div>
 
             {/* Region Tabs */}
             <div className="mb-4">
@@ -160,7 +117,7 @@ export default function BranchesPage() {
             </div>
 
             {/* Branches for Active Region */}
-            <div className="bg-white rounded-2xl md:shadow-lg p-6">
+            <div className="bg-white rounded-2xl md:shadow-md p-6">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h2 className="text-2xl font-bold text-[#0477BF]">{activeRegion}</h2>
@@ -219,29 +176,34 @@ export default function BranchesPage() {
           {/* Right Column: Map & Info  */}
           <div className="space-y-8">
 
-            {/* Map */}
-            <div className="bg-white rounded-2xl md:shadow-lg p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-4">Find a Church Near You</h2>
-              <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-3">🗺️</div>
-                  <p className="text-gray-600">Interactive Map Coming Soon</p>
-                  <p className="text-sm text-gray-500 mt-2">Use our branch list to find locations</p>
-                </div>
-              </div>
-              <div className="mt-4 text-sm text-gray-600">
-                <p>All our branches are strategically located to serve local communities with the Gospel message.</p>
-              </div>
-            </div>
+            {/* Search */}
+           <div className="bg-white rounded-2xl md:shadow-md p-6">
+  <h2 className="text-xl font-bold text-gray-800 mb-4">Find a Church Near You</h2>
+  
+  <div className="relative">
+    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <Search className="h-5 w-5 text-gray-400" />
+    </div>
+    <input
+      type="text"
+      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+      placeholder="Search churches near you"
+    />
+  </div>
+  
+  <div className="mt-4 text-sm text-gray-600">
+    <p>All our branches are strategically located to serve local communities with the Gospel message.</p>
+  </div>
+</div>
 
             {/* Headquarters Info */}
-            <div className="bg-gradient-to-br from-[#0477BF] to-cyan-600 rounded-2xl md:shadow-lg p-6 text-white">
+            <div className="bg-white rounded-2xl md:shadow-md p-6 text-gray-700">
               <h2 className="text-xl font-bold mb-4">Headquarters</h2>
               <div className="space-y-4">
                 <div>
                   <h3 className="font-semibold mb-1">Good News Mission Kenya</h3>
-                  <p className="text-blue-100 text-sm">Thika Road, Behind Safari Park</p>
-                  <p className="text-blue-100 text-sm">P.O Box 57329 - 00200, Nairobi</p>
+                  <p className="text-gray-800 text-sm">Thika Road, Behind Safari Park</p>
+                  <p className="text-gray-800 text-sm">P.O Box 57329 - 00200, Nairobi</p>
                 </div>
                 <div>
                   <p className="font-medium">Phone: <a href="tel:0704333111" className="hover:underline">0704 333 111</a></p>
@@ -258,29 +220,29 @@ export default function BranchesPage() {
               </div>
               <Link
                 href="/contact"
-                className="block w-full bg-white text-[#0477BF] text-center py-3 rounded-lg font-semibold mt-6 hover:bg-gray-100 transition-colors"
+                className="block w-full bg-blue-100 text-[#0477BF] text-center py-3 rounded-lg font-semibold mt-6 hover:bg-gray-100 transition-colors"
               >
                 Contact Headquarters
               </Link>
             </div>
 
             {/* Starting a New Branch */}
-            <div className="bg-white rounded-2xl md:shadow-lg p-6">
+            <div className="bg-white rounded-2xl md:shadow-md p-6">
               <h2 className="text-xl font-bold text-gray-800 mb-4">Interested in Starting a New Branch?</h2>
               <p className="text-gray-600 mb-4">
                 We're always looking to expand our reach. If you're interested in starting a Good News Mission branch in your area:
               </p>
               <ul className="space-y-2 text-sm text-gray-600 mb-6">
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
                   <span>Community of at least 20 interested believers</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
                   <span>Available meeting space</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
                   <span>Commitment to Good News Mission doctrine</span>
                 </li>
               </ul>

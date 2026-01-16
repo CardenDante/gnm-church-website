@@ -12,7 +12,7 @@ export default function ContactForm() {
     subject: '',
     message: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
 
@@ -49,7 +49,7 @@ export default function ContactForm() {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
-      
+
       // clear status message 
       setTimeout(() => {
         setSubmitStatus(null);
@@ -71,11 +71,11 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0477BF] focus:border-transparent outline-none transition"
+          className="w-full px-4 py-3 border border-gray-300  placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-[#0477BF] focus:border-transparent outline-none transition"
           placeholder="John Doe"
         />
       </div>
-      
+
       {/* Email Field */}
       <div className="space-y-2">
         <label className="text-gray-700 font-medium flex items-center gap-2">
@@ -88,11 +88,11 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0477BF] focus:border-transparent outline-none transition"
+          className="w-full px-4 py-3 border border-gray-300 placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-[#0477BF] focus:border-transparent outline-none transition"
           placeholder="john@example.com"
         />
       </div>
-      
+
       {/* Subject Field */}
       <div className="space-y-2">
         <label className="text-gray-700 font-medium flex items-center gap-2">
@@ -105,11 +105,11 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0477BF] focus:border-transparent outline-none transition"
+          className="w-full px-4 py-3 border border-gray-300 placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-[#0477BF] focus:border-transparent outline-none transition"
           placeholder="How can we help you?"
         />
       </div>
-      
+
       {/* Message Field */}
       <div className="space-y-2">
         <label className="text-gray-700 font-medium flex items-center gap-2">
@@ -122,11 +122,11 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={5}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0477BF] focus:border-transparent outline-none transition resize-none"
+          className="w-full px-4 py-3 border border-gray- placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-[#0477BF] focus:border-transparent outline-none transition resize-none"
           placeholder="Type your message here..."
         ></textarea>
       </div>
-      
+
       {/* Submit Button  */}
       <div className="space-y-3">
         <button
@@ -146,7 +146,7 @@ export default function ContactForm() {
             </>
           )}
         </button>
-        
+
         {submitStatus === 'success' && (
           <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
             <p className="text-green-700 text-sm font-medium text-center">
@@ -154,7 +154,7 @@ export default function ContactForm() {
             </p>
           </div>
         )}
-        
+
         {submitStatus === 'error' && (
           <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
             <p className="text-red-700 text-sm font-medium text-center">

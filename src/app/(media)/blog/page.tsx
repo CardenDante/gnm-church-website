@@ -114,10 +114,10 @@ export default function BlogPage() {
             <p className="text-gray-600">Spiritual insights and biblical teachings</p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <select 
+            <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="all">All Topics</option>
               <option value="testimony">Testimonies</option>
@@ -125,10 +125,10 @@ export default function BlogPage() {
               <option value="study">Bible Studies</option>
               <option value="reflection">Reflections</option>
             </select>
-            <select 
+            <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="latest">Latest First</option>
               <option value="popular">Most Popular</option>
@@ -137,17 +137,17 @@ export default function BlogPage() {
             </select>
           </div>
         </div>
-       
+
       </div>
 
       {/* Blog Grid  */}
       <div className="space-y-8">
         {blogPosts.map((post) => (
-          <article 
-            key={post.id} 
+          <article
+            key={post.id}
             className={`
-               border-b border-purple-700 overflow-hidden  transition-all duration-300
-              ${post.featured ? 'border-purple-300' : 'border-gray-200'}
+               border-b border-blue-700 overflow-hidden  transition-all duration-300
+              ${post.featured ? 'border-blue-300' : 'border-gray-200'}
             `}
           >
             <div className="pb-6 pt-6">
@@ -156,40 +156,20 @@ export default function BlogPage() {
                 <div className="lg:w-2/5">
                   <div className="relative h-64 rounded-xl overflow-hidden group">
                     <Image
-                      src={post.imageUrl} 
+                      src={post.imageUrl}
                       alt={post.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-102"
                       sizes="(max-width: 1024px) 100vw, 40vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                   
-               
+
+
                   </div>
-                  
-                  {/* Quick Stats */}
-                  <div className="mt-4 grid grid-cols-3 gap-3">
-                    <div className="text-center p-2 bg-gray-50 rounded-lg">
-                      <div className="flex items-center justify-center gap-1 text-gray-600">
-                        <Eye className="w-4 h-4" />
-                        <span className="text-sm font-medium">{post.views}</span>
-                      </div>
-                    </div>
-                    <div className="text-center p-2 bg-gray-50 rounded-lg">
-                      <div className="flex items-center justify-center gap-1 text-gray-600">
-                        <MessageSquare className="w-4 h-4" />
-                        <span className="text-sm font-medium">{post.comments}</span>
-                      </div>
-                    </div>
-                    <div className="text-center p-2 bg-gray-50 rounded-lg">
-                      <div className="flex items-center justify-center gap-1 text-gray-600">
-                        <Heart className="w-4 h-4" />
-                        <span className="text-sm font-medium">{post.likes}</span>
-                      </div>
-                    </div>
-                  </div>
+
+
                 </div>
-                
+
                 {/* Content */}
                 <div className="lg:w-3/5">
                   {/* Header */}
@@ -208,67 +188,49 @@ export default function BlogPage() {
                         <span className="text-sm">{post.readTime}</span>
                       </div>
                     </div>
-                    <button className="text-gray-400 hover:text-purple-600 transition-colors">
-                      <Bookmark className="w-5 h-5" />
-                    </button>
                   </div>
-                  
+
                   {/* Title */}
                   <h3 className="text-2xl font-bold text-gray-800 mb-3 leading-tight">
-                    <Link href={post.page} className="hover:text-purple-600 transition-colors group/title">
+                    <Link href={post.page} className="hover:text-blue-600 transition-colors group/title">
                       {post.title}
                       <span className="inline-block ml-2 opacity-0 group-hover/title:opacity-100 transition-opacity">
                         <ArrowRight className="w-5 h-5 inline" />
                       </span>
                     </Link>
                   </h3>
-                  
+
                   {/* Categories */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {post.categories.map((category, index) => (
-                      <span 
+                      <span
                         key={index}
-                        className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 rounded-full text-xs font-medium border border-purple-200"
+                        className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-blue-50 to-pink-50 text-blue-700 rounded-full text-xs font-medium border border-blue-200"
                       >
                         <Tag className="w-3 h-3" />
                         {category}
                       </span>
                     ))}
                   </div>
-                  
+
                   {/* Excerpt */}
                   <div className="mb-6">
                     <p className="text-gray-600 leading-relaxed">
                       {post.excerpt}
                     </p>
                   </div>
-                  
+
                   {/* Action Buttons */}
                   <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-gray-100">
                     <div className="flex items-center gap-3">
-                      <Link 
+                      <Link
                         href={post.page}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all font-medium"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-800 to-cyan-600 text-white rounded-lg  transition-all font-medium"
                       >
                         <BookOpen className="w-5 h-5" />
                         Read Article
                       </Link>
-                      <button className="px-4 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-                        Save for Later
-                      </button>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <button className="p-2 text-gray-400 hover:text-red-500 transition-colors">
-                        <Heart className="w-5 h-5" />
-                      </button>
-                      <button className="p-2 text-gray-400 hover:text-blue-500 transition-colors">
-                        <MessageSquare className="w-5 h-5" />
-                      </button>
-                      <button className="p-2 text-gray-400 hover:text-green-500 transition-colors">
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                        </svg>
-                      </button>
+
                     </div>
                   </div>
                 </div>
@@ -289,7 +251,7 @@ export default function BlogPage() {
               ← Previous
             </button>
             <div className="flex items-center space-x-1">
-              <button className="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm rounded-lg">
+              <button className="px-3 py-1.5 bg-gradient-to-r from-blue-800 to-cyan-600 text-white text-sm rounded-lg">
                 1
               </button>
               {[2, 3, 4, 5].map((page) => (

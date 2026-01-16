@@ -1,4 +1,4 @@
-// app/media/testimonies/layout.tsx
+// app/testimonies/layout.tsx
 'use client';
 
 import { useState } from 'react';
@@ -26,61 +26,50 @@ import {
 const testimonyNavItems = [
   { 
     name: 'All Testimonies', 
-    href: '/media/testimonies',
+    href: '/testimonies',
     icon: Heart,
     shortDesc: 'All Stories'
   },
   { 
     name: 'Video Testimonies', 
-    href: '/media/testimonies/video',
+    href: '/testimonies/#',
     icon: Video,
     shortDesc: 'Video Stories'
   },
   { 
     name: 'Written Testimonies', 
-    href: '/media/testimonies/written',
+    href: '/testimonies/#',
     icon: BookOpen,
     shortDesc: 'Written Stories'
   },
   { 
     name: 'Recent Testimonies', 
-    href: '/media/testimonies/recent',
+    href: '/testimonies/#',
     icon: Calendar,
     shortDesc: 'Latest Stories'
   },
   { 
     name: 'Featured Testimonies', 
-    href: '/media/testimonies/featured',
+    href: '/testimonies/#',
     icon: Star,
     shortDesc: 'Highlighted Stories'
   },
   { 
     name: 'Share Your Story', 
-    href: '/media/testimonies/share',
+    href: '/testimonies/#',
     icon: MessageSquare,
     shortDesc: 'Submit Your Story'
   },
 ];
 
-const stats = [
-  { label: 'Testimonies', value: '200+', icon: Heart },
-  { label: 'Video Stories', value: '50+', icon: Video },
-  { label: 'Lives Changed', value: '500+', icon: Users },
-  { label: 'Countries', value: '15+', icon: MapPin },
-];
 
-const quickLinks = [
-  { text: 'Share Your Testimony', href: '/media/testimonies/share', icon: MessageSquare },
-  { text: 'Watch Video Stories', href: '/media/testimonies/video', icon: Video },
-  { text: 'Request Prayer', href: '/prayer', icon: Heart },
-];
 
 const testimonyCategories = [
   {
     title: 'Salvation Stories',
     description: 'Transformations through salvation',
     count: '45 stories',
-    color: 'from-green-500 to-green-600'
+    color: 'from-blue-500 to-blue-600'
   },
   {
     title: 'Healing Testimonies',
@@ -128,7 +117,7 @@ export default function TestimoniesLayout({
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Enhanced Dynamic Header */}
-      <div className="bg-gradient-to-r from-green-500 to-green-700 text-white py-12 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-900 to-cyan-800 text-white py-12  relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -140,7 +129,7 @@ export default function TestimoniesLayout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-6">
             <Heart className="size-8 text-white" />
-          </div>
+          </div> 
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {activeItem}
           </h1>
@@ -162,10 +151,7 @@ export default function TestimoniesLayout({
                 />
               </div>
               <div className="flex gap-2">
-                <button className="px-4 py-3 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30 transition-all flex items-center gap-2">
-                  <Filter className="w-4 h-4" />
-                  Filter
-                </button>
+              
                 <button className="px-4 py-3 bg-white text-gray-800 rounded-lg hover:bg-gray-100 transition-all font-medium">
                   Search
                 </button>
@@ -175,23 +161,6 @@ export default function TestimoniesLayout({
         </div>
       </div>
 
-      {/* Stats Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10">
-        <div className="bg-white rounded-2xl shadow-xl p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-green-50 rounded-full mb-3">
-                  <Icon className="w-6 h-6 text-green-600" />
-                </div>
-                <div className="text-2xl font-bold text-gray-800">{stat.value}</div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
@@ -209,7 +178,7 @@ export default function TestimoniesLayout({
             {/* Navigation Card */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-6 pb-3 border-b border-gray-200 flex items-center gap-2">
-                <Heart className="w-5 h-5 text-green-600" />
+                <Heart className="w-5 h-5 text-blue-600" />
                 Browse Testimonies
               </h3>
               
@@ -226,78 +195,53 @@ export default function TestimoniesLayout({
                       className={`
                         flex items-center p-3 rounded-xl transition-all duration-300 transform hover:scale-[1.02]
                         ${isActive
-                          ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 shadow-sm'
+                          ? 'bg-gradient-to-r from-blue-50 to-emerald-50 border-2 border-blue-200 shadow-sm'
                           : 'bg-gray-50 hover:bg-gray-100 border border-gray-100'
                         }
                       `}
                     >
-                      <div className={`p-2 rounded-lg ${isActive ? 'bg-green-100' : 'bg-gray-100'}`}>
-                        <Icon className={`w-5 h-5 ${isActive ? 'text-green-600' : 'text-gray-600'}`} />
+                      <div className={`p-2 rounded-lg ${isActive ? 'bg-blue-100' : 'bg-gray-100'}`}>
+                        <Icon className={`w-5 h-5 ${isActive ? 'text-blue-600' : 'text-gray-600'}`} />
                       </div>
                       <div className="flex-1 ml-3">
-                        <div className={`font-medium ${isActive ? 'text-green-700' : 'text-gray-700'}`}>
+                        <div className={`font-medium ${isActive ? 'text-blue-700' : 'text-gray-700'}`}>
                           {item.name}
                         </div>
                         <div className="text-xs text-gray-500 mt-1">{item.shortDesc}</div>
                       </div>
-                      {isActive && (
-                        <ArrowRight className="w-5 h-5 text-green-500 ml-2" />
-                      )}
+                   
                     </Link>
                   );
                 })}
               </nav>
 
-              {/* Quick Stats */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-gray-600">Monthly Readers</span>
-                  <span className="text-sm font-bold text-gray-800">10,000+</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-600">New Stories This Month</span>
-                  <span className="text-sm font-bold text-gray-800">15+</span>
-                </div>
-                <Link 
-                  href="/media"
-                  className="inline-flex items-center mt-4 text-sm font-medium text-green-600 hover:text-green-800 hover:underline"
-                >
-                  Browse All Media
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </Link>
-              </div>
+             
             </div>
 
             {/* Categories Card */}
-            <div className="bg-gradient-to-br from-green-500 to-green-700 rounded-2xl shadow-lg p-6 text-white">
+            <div className="bg-white rounded-2xl shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                 <BookOpen className="w-5 h-5" />
                 Testimony Categories
               </h3>
               <div className="space-y-4">
                 {testimonyCategories.map((category, index) => (
-                  <div key={index} className="p-3 bg-white/10 rounded-lg backdrop-blur-sm">
+                  <div key={index} className="p-3 bg-gray-50 rounded-lg backdrop-blur-sm">
                     <div className="flex items-start justify-between mb-2">
                       <h4 className="font-semibold">{category.title}</h4>
-                      <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
+                      <span className="text-xs bg-blue-50 px-2 py-1 rounded-full">
                         {category.count}
                       </span>
                     </div>
-                    <p className="text-sm text-white/80 mb-2">{category.description}</p>
-                    <Link 
-                      href={`/media/testimonies/category/${category.title.toLowerCase().replace(/ /g, '-')}`}
-                      className="text-sm font-medium hover:underline flex items-center gap-1"
-                    >
-                      Browse Category
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    <p className="text-sm text-gray-500 mb-2">{category.description}</p>
+                 
                   </div>
                 ))}
               </div>
               <div className="mt-6 pt-4 border-t border-white/20">
                 <Link
-                  href="/media/testimonies/categories"
-                  className="flex items-center justify-center w-full bg-white text-center py-2.5 rounded-lg font-semibold text-gray-800 hover:bg-gray-100 transition-colors gap-2"
+                  href="/testimonies/categories"
+                  className="flex items-center justify-center w-full bg-gray-100 text-center py-2.5 rounded-lg font-semibold text-gray-800 hover:bg-gray-50 transition-colors gap-2"
                 >
                   <BookOpen className="w-4 h-4" />
                   View All Categories
@@ -305,69 +249,25 @@ export default function TestimoniesLayout({
               </div>
             </div>
 
-            {/* Quick Actions Card */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <ArrowRight className="w-5 h-5 text-green-600" />
-                Quick Actions
-              </h3>
-              <div className="space-y-3">
-                {quickLinks.map((link, index) => {
-                  const Icon = link.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={link.href}
-                      target={link.href.startsWith('http') ? '_blank' : '_self'}
-                      className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                    >
-                      <Icon className="w-4 h-4 text-green-600 mr-3" />
-                      <span className="flex-1 font-medium text-gray-700">{link.text}</span>
-                      {link.href.startsWith('http') ? (
-                        <ExternalLink className="w-4 h-4 text-gray-400" />
-                      ) : (
-                        <ArrowRight className="w-4 h-4 text-gray-400" />
-                      )}
-                    </a>
-                  );
-                })}
-              </div>
-              <div className="mt-6 pt-4 border-t border-gray-200">
-                <Link
-                  href="/contact"
-                  className="flex items-center justify-center w-full bg-green-50 text-center py-2.5 rounded-lg font-semibold text-green-700 hover:bg-green-100 transition-colors gap-2"
-                >
-                  <Mail className="w-4 h-4" />
-                  Contact Testimonies Team
-                </Link>
-              </div>
-            </div>
+         
 
             {/* Share Card */}
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-lg p-6 text-white">
+            <div className="bg-white rounded-2xl shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
                 <Share2 className="w-5 h-5" />
                 Share a Testimony
               </h3>
-              <p className="text-gray-300 text-sm mb-4">
-                Your story can inspire others! Share how God has worked in your life.
+              <p className="text-gray-500 text-sm mb-4">
+                Your story can inspire others. Share how God has worked in your life.
               </p>
               <div className="space-y-3">
                 <Link
-                  href="/media/testimonies/share"
-                  className="block w-full bg-white text-gray-800 font-semibold py-2.5 rounded-lg hover:bg-gray-100 transition-colors text-center"
+                  href="/contact"
+                  className="block w-full bg-blue-100 text-gray-800 font-semibold py-2.5 rounded-lg transition-colors text-center"
                 >
                   Share Your Story
                 </Link>
-                <Link
-                  href="/media/testimonies/guidelines"
-                  className="block text-center text-sm text-green-300 hover:text-green-200 hover:underline"
-                >
-                  Read Sharing Guidelines
-                </Link>
-              </div>
-              <div className="mt-4 pt-4 border-t border-white/20 text-center">
-                <p className="text-xs text-gray-400">All stories are reviewed before publishing</p>
+              
               </div>
             </div>
           </div>

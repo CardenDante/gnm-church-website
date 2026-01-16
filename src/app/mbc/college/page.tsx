@@ -129,11 +129,11 @@ export default function MBCPage() {
                   </td>
                 </tr>
               ))}
-            </tbody>
+            </tbody> 
           </table>
         </div> 
       </section>
-    </div>
+    </div> 
   );
 }
 

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { BookOpen, User, Heart, Church, Droplets, Calendar, Globe, Users, Clock, Scroll, GraduationCap, Landmark, Check, ChevronDown } from 'lucide-react';
 
 export default function WhatWeBelievePage() {
   const [expandedSections, setExpandedSections] = useState<number[]>([0, 1]);
@@ -21,7 +22,7 @@ export default function WhatWeBelievePage() {
       summary: "The Holy Bible is God's perfect revelation, totally true and trustworthy.",
       content: "The Holy Bible was written by men divinely inspired and is God's revelation of Himself to man. It is a perfect treasure of divine instruction. It has God for its author, salvation for its end, and truth, without any mixture of error, for its matter. Therefore, all Scripture is totally true and trustworthy.",
       references: "Exodus 24:4; Psalms 19:7-10; 119:105; Matthew 5:17-18; John 17:17; 2 Timothy 3:15-17; Hebrews 4:12; 2 Peter 1:19-21.",
-      icon: "📖"
+      icon: <BookOpen className="w-8 h-8 text-[#0477BF]" />
     },
     {
       id: 2,
@@ -29,7 +30,11 @@ export default function WhatWeBelievePage() {
       summary: "One living and true God, eternally existing in three persons: Father, Son, and Holy Spirit.",
       content: "There is one and only one living and true God. He is an intelligent, spiritual, and personal Being, the Creator, Redeemer, Preserver, and Ruler of the universe. The eternal triune God reveals Himself to us as Father, Son, and Holy Spirit, with distinct personal attributes, but without division of nature, essence, or being.",
       references: "Genesis 1:1; Deuteronomy 6:4; Isaiah 43:3; Matthew 28:19; John 4:24; 14:6-13; 1 Corinthians 8:6; 1 Timothy 1:17; 1 John 5:7",
-      icon: "✝️",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-[#0477BF]">
+          <path d="M11 2h2v7h5v2h-5v11h-2v-11h-5v-2h5z" />
+        </svg>
+      ),
       subsections: [
         {
           title: "God the Father",
@@ -54,7 +59,7 @@ export default function WhatWeBelievePage() {
       summary: "Man is God's special creation, fallen through sin, redeemable only by God's grace.",
       content: "Man is the special creation of God, made in His own image. By his free choice man sinned against God and brought sin into the human race. Therefore, all people inherit a nature inclined toward sin and are under condemnation. Only the grace of God can bring man into His holy fellowship.",
       references: "Genesis 1:26-30; 3; Psalms 51:5; Isaiah 6:5; Romans 1:19-32; 3:10-18,23; 5:12,19; Ephesians 2:1-22",
-      icon: "👤"
+      icon: <User className="w-8 h-8 text-[#0477BF]" />
     },
     {
       id: 4,
@@ -62,7 +67,7 @@ export default function WhatWeBelievePage() {
       summary: "Redemption through Christ alone, received by faith, resulting in regeneration, justification, sanctification, and glorification.",
       content: "Salvation involves the redemption of the whole man, and is offered freely to all who accept Jesus Christ as Lord and Saviour. In its broadest sense salvation includes regeneration, justification, sanctification, and glorification. There is no salvation apart from personal faith in Jesus Christ as Lord.",
       references: "Matthew 1:21; John 1:12-14; 3:3-21; Acts 4:12; Romans 1:16-18; 3:23-25; 5:8-10; 8:1-18; Ephesians 2:8-9; Titus 3:5",
-      icon: "🕊️"
+      icon: <Heart className="w-8 h-8 text-[#0477BF]" />
     },
     {
       id: 5,
@@ -70,7 +75,7 @@ export default function WhatWeBelievePage() {
       summary: "The body of Christ, local and universal, called to worship, fellowship, and evangelism.",
       content: "A New Testament church is a local congregation of baptized believers, associated by covenant in the faith and fellowship of the gospel. The New Testament also speaks of the church as the Body of Christ which includes all of the redeemed of all the ages.",
       references: "Matthew 16:15-19; 18:15-20; Acts 2:41-42,47; 1 Corinthians 12; Ephesians 1:22-23; 2:19-22; 5:22-32; Colossians 1:18",
-      icon: "⛪"
+      icon: <Church className="w-8 h-8 text-[#0477BF]" />
     },
     {
       id: 6,
@@ -78,7 +83,7 @@ export default function WhatWeBelievePage() {
       summary: "Two ordinances commanded by Christ for observance by the church.",
       content: "Christian baptism is the immersion of a believer in water in the name of the Father, the Son, and the Holy Spirit. The Lord's Supper is a symbolic act of obedience whereby members memorialize the death of Christ and anticipate His second coming.",
       references: "Matthew 3:13-17; 26:26-30; 28:19-20; Acts 2:41-42; 8:35-39; Romans 6:3-5; 1 Corinthians 10:16; 11:23-29",
-      icon: "💧"
+      icon: <Droplets className="w-8 h-8 text-[#0477BF]" />
     },
     {
       id: 7,
@@ -86,7 +91,7 @@ export default function WhatWeBelievePage() {
       summary: "Sunday as the Christian Sabbath for worship and spiritual devotion.",
       content: "The first day of the week is the Lord's Day. It commemorates the resurrection of Christ from the dead and should include exercises of worship and spiritual devotion, both public and private.",
       references: "Exodus 20:8-11; Matthew 12:1-12; 28:1ff.; Mark 16:1-7; Luke 24:1-3; John 20:1,19-28; Acts 20:7; Revelation 1:10",
-      icon: "📅"
+      icon: <Calendar className="w-8 h-8 text-[#0477BF]" />
     },
     {
       id: 8,
@@ -94,7 +99,7 @@ export default function WhatWeBelievePage() {
       summary: "The duty of every Christian to share the Gospel with all nations.",
       content: "It is the duty and privilege of every follower of Christ to endeavor to make disciples of all nations. The Lord Jesus Christ has commanded the preaching of the gospel to all nations.",
       references: "Matthew 9:37-38; 28:18-20; Mark 16:15; Luke 24:46-48; John 20:21; Acts 1:8; Romans 10:13-15",
-      icon: "🌍"
+      icon: <Globe className="w-8 h-8 text-[#0477BF]" />
     },
     {
       id: 9,
@@ -102,7 +107,7 @@ export default function WhatWeBelievePage() {
       summary: "God's foundational institution for society, centered on marriage between one man and one woman.",
       content: "God has ordained the family as the foundational institution of human society. Marriage is the uniting of one man and one woman in covenant commitment for a lifetime.",
       references: "Genesis 1:26-28; 2:18-25; Exodus 20:12; Deuteronomy 6:4-9; Psalms 127; 128; Proverbs 22:6; Ephesians 5:21-33; 6:1-4",
-      icon: "👨‍👩‍👧‍👦"
+      icon: <Users className="w-8 h-8 text-[#0477BF]" />
     },
     {
       id: 10,
@@ -110,14 +115,14 @@ export default function WhatWeBelievePage() {
       summary: "Christ's return, resurrection, judgment, and eternal states.",
       content: "Jesus Christ will return personally and visibly in glory to the earth; the dead will be raised; and Christ will judge all men. The righteous will dwell forever with the Lord, while the unrighteous will face everlasting punishment.",
       references: "Matthew 16:27; 24:27,30; 25:31-46; John 14:1-3; Acts 1:11; 1 Corinthians 15:24-28,35-58; 1 Thessalonians 4:14-18; Revelation 20:1-22:13",
-      icon: "✝️"
+      icon: <Clock className="w-8 h-8 text-[#0477BF]" />
     },
   ];
-
+ 
   return (
     <main>
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-purple-800 text-white py-16">
+      <div className="py-12 bg-gradient-to-r from-blue-900 to-cyan-800 text-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">What We Believe</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
@@ -146,7 +151,7 @@ export default function WhatWeBelievePage() {
 
           {/* Left Column: Doctrines List  */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl md:shadow-lg p-8 mb-8">
+            <div className="bg-white rounded-2xl md:shadow-md p-8 mb-8">
               <h2 className="text-3xl font-bold text-[#0477BF] mb-6">Our Doctrinal Statement</h2>
               <p className="text-gray-700 mb-8 leading-relaxed">
                 Good News Mission holds to the historic Christian faith as revealed in the Scriptures.
@@ -158,17 +163,17 @@ export default function WhatWeBelievePage() {
                   <div
                     key={doctrine.id}
                     className={`border rounded-xl overflow-hidden transition-all duration-300 ${expandedSections.includes(index)
-                      ? 'border-blue-300 md:shadow-lg'
+                      ? 'border-blue-300 md:shadow-md'
                       : 'border-gray-200 hover:border-gray-300'
                       }`}
                   >
                     <button
                       onClick={() => toggleSection(index)}
-                      className="w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors"
+                      className="w-full text-left p-6 cursor-pointer transition-colors"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
-                          <span className="text-2xl mr-4">{doctrine.icon}</span>
+                          <span className="mr-4">{doctrine.icon}</span>
                           <div>
                             <h3 className="text-xl font-bold text-gray-800">
                               {doctrine.id}. {doctrine.title}
@@ -176,15 +181,7 @@ export default function WhatWeBelievePage() {
                             <p className="text-gray-600 text-sm mt-1">{doctrine.summary}</p>
                           </div>
                         </div>
-                        <svg
-                          className={`w-6 h-6 text-gray-500 transition-transform ${expandedSections.includes(index) ? 'rotate-180' : ''
-                            }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+                        <ChevronDown className={`w-6 h-6 text-gray-500 transition-transform ${expandedSections.includes(index) ? 'rotate-180' : ''}`} />
                       </div>
                     </button>
 
@@ -245,41 +242,41 @@ export default function WhatWeBelievePage() {
           <div className="space-y-8">
 
             {/* Key Beliefs Card */}
-            <div className="bg-gradient-to-br from-[#0477BF] to-cyan-600 md:rounded-2xl md:shadow-lg p-6 text-white">
+            <div className="bg-white md:rounded-2xl md:shadow-md p-6 text-gray-700">
               <h2 className="text-xl font-bold mb-4">Core Beliefs</h2>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-green-300 mr-2">✓</span>
+                  <Check className="w-5 h-5 text-green-300 mr-2 shrink-0" />
                   <span>Authority of Scripture</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-300 mr-2">✓</span>
+                  <Check className="w-5 h-5 text-green-300 mr-2 shrink-0" />
                   <span>Trinity: Father, Son, Holy Spirit</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-300 mr-2">✓</span>
+                  <Check className="w-5 h-5 text-green-300 mr-2 shrink-0" />
                   <span>Salvation by Grace through Faith</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-300 mr-2">✓</span>
+                  <Check className="w-5 h-5 text-green-300 mr-2 shrink-0" />
                   <span>Great Commission Mandate</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-300 mr-2">✓</span>
+                  <Check className="w-5 h-5 text-green-300 mr-2 shrink-0" />
                   <span>Christ's Return & Eternal Life</span>
                 </li>
               </ul>
             </div>
 
             {/* Related Links */}
-            <div className="bg-white rounded-2xl md:shadow-lg p-6">
+            <div className="bg-white rounded-2xl md:shadow-md p-6">
               <h2 className="text-xl font-bold text-gray-800 mb-4">Explore More</h2>
               <div className="space-y-3">
                 <Link
                   href="/about/history"
-                  className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                  className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                 >
-                  <span className="text-2xl mr-3">📜</span>
+                  <Scroll className="w-6 h-6 text-[#0477BF] mr-3" />
                   <div>
                     <div className="font-medium text-gray-800">Our History</div>
                     <div className="text-sm text-gray-600">Journey of faith in Kenya</div>
@@ -287,9 +284,9 @@ export default function WhatWeBelievePage() {
                 </Link>
                 <Link
                   href="/mbc/college"
-                  className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                  className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                 >
-                  <span className="text-2xl mr-3">🎓</span>
+                  <GraduationCap className="w-6 h-6 text-[#0477BF] mr-3" />
                   <div>
                     <div className="font-medium text-gray-800">Bible College</div>
                     <div className="text-sm text-gray-600">Theological education</div>
@@ -297,9 +294,9 @@ export default function WhatWeBelievePage() {
                 </Link>
                 <Link
                   href="/departments"
-                  className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                  className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                 >
-                  <span className="text-2xl mr-3">🏛️</span>
+                  <Landmark className="w-6 h-6 text-[#0477BF] mr-3" />
                   <div>
                     <div className="font-medium text-gray-800">Ministries</div>
                     <div className="text-sm text-gray-600">Our departments & services</div>
@@ -307,9 +304,9 @@ export default function WhatWeBelievePage() {
                 </Link>
                 <Link
                   href="/media/sermons"
-                  className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                  className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors group"
                 >
-                  <span className="text-2xl mr-3">📖</span>
+                  <BookOpen className="w-6 h-6 text-[#0477BF] mr-3" />
                   <div>
                     <div className="font-medium text-gray-800">Sermons</div>
                     <div className="text-sm text-gray-600">Biblical teaching</div>
@@ -319,7 +316,7 @@ export default function WhatWeBelievePage() {
             </div>
 
             {/* Download PDF */}
-            <div className="bg-white rounded-2xl md:shadow-lg p-6 border-2 border-blue-100">
+            <div className="bg-white rounded-2xl md:shadow-md p-6 border-2 border-blue-100">
               <h2 className="text-xl font-bold text-gray-800 mb-4">Full Doctrinal Statement</h2>
               <p className="text-gray-600 mb-4 text-sm">
                 Download our complete doctrinal statement for detailed study and reference.
@@ -337,4 +334,3 @@ export default function WhatWeBelievePage() {
     </main>
   );
 }
-

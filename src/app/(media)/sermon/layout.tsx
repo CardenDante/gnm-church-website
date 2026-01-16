@@ -37,7 +37,7 @@ export default function SermonLayout({
                 <Facebook size={18} />
                 <span>Facebook</span>
               </a>
-              
+               
               <a
                 href="https://x.com/intent/tweet?text=Check%20out%20this%20sermon%20from%20Good%20News%20Mission&url=https://goodnewsmission.org/sermons"
                 target="_blank"

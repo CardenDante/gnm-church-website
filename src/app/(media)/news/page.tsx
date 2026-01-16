@@ -154,33 +154,10 @@ export default function NewsPage() {
                       className="object-cover transition-transform duration-300"
                       sizes="(max-width: 1024px) 100vw, 40vw"
                     />
-                   
-                    {article.trending && (
-                      <div className="absolute top-3 right-3">
-                        <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium border border-orange-200 flex items-center gap-1">
-                          <TrendingUp className="w-3 h-3" />
-                          Trending
-                        </span>
-                      </div>
-                    )}
+                  
                   </div>
                   
-                  {/* Stats Bar */}
-                  <div className="mt-4 flex items-center justify-between text-sm">
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-1 text-gray-600">
-                        <Eye className="w-4 h-4" />
-                        <span>{article.views}</span>
-                      </div>
-                      <div className="flex items-center gap-1 text-gray-600">
-                        <MessageSquare className="w-4 h-4" />
-                        <span>{article.comments}</span>
-                      </div>
-                    </div>
-                    <button className="text-gray-400 hover:text-blue-600">
-                      <Bookmark className="w-5 h-5" />
-                    </button>
-                  </div>
+               
                 </div>
                 
                 {/* Content */}
@@ -223,26 +200,17 @@ export default function NewsPage() {
                   
                   {/* Footer */}
                   <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-gray-100">
-                    <div className="flex items-center gap-4 text-sm text-gray-600">
-                      <div className="flex items-center gap-1">
-                        <Users className="w-4 h-4" />
-                        <span>{article.attendees}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        <span>3 min read</span>
-                      </div>
-                    </div>
+                   
                     
                     <div className="flex items-center gap-3">
                       <Link 
                         href={article.page}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg  transition-colors font-medium"
                       >
                         Read Full Story
                         <ChevronRight className="w-4 h-4" />
                       </Link>
-                      <button className="px-4 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                      <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
                         Share
                       </button>
                     </div>

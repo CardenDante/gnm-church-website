@@ -12,14 +12,14 @@ export default function MahanaimCollegePage() {
     <div className="p-8">
       {/* Hero Section */}
       <div className="mb-10">
-        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-100">
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
             Mahanaim Education Institute
           </h1>
           <a 
             href="http://www.mahanaim.ac.ke" 
             target="_blank"
-            className="text-purple-600 hover:text-purple-800 hover:underline mb-4 inline-block"
+            className="text-blue-600 hover:text-blue-800 hover:underline mb-4 inline-block"
           >
             🌐 www.mahanaim.ac.ke
           </a>
@@ -34,7 +34,7 @@ export default function MahanaimCollegePage() {
         <div>
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-              <span className="w-2 h-6 bg-purple-600 mr-3 rounded"></span>
+              <span className="w-2 h-6 bg-blue-600 mr-3 rounded"></span>
               About Our College
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -49,12 +49,12 @@ export default function MahanaimCollegePage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-              <span className="w-2 h-6 bg-purple-600 mr-3 rounded"></span>
+              <span className="w-2 h-6 bg-blue-600 mr-3 rounded"></span>
               Our 3C Philosophy
             </h2>
             <div className="space-y-6">
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-5 rounded-xl border border-purple-100">
-                <h3 className="text-xl font-bold text-purple-700 mb-2">CHALLENGE</h3>
+              <div className="bg-gradient-to-r from-blue-50 to-pink-50 p-5 rounded-xl border border-blue-100">
+                <h3 className="text-xl font-bold text-blue-700 mb-2">CHALLENGE</h3>
                 <p className="text-gray-700">
                   We encourage tomorrow's leaders through various challenges, especially in overcoming their personal limits and thoughts. We believe growth happens outside comfort zones.
                 </p>
@@ -79,17 +79,17 @@ export default function MahanaimCollegePage() {
         <div>
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-              <span className="w-2 h-6 bg-purple-600 mr-3 rounded"></span>
+              <span className="w-2 h-6 bg-blue-600 mr-3 rounded"></span>
               Course Programs
             </h2>
             <div className="space-y-6">
               {courses.map((category, index) => (
-                <div key={index} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-purple-300 hover:shadow-md transition-all">
+                <div key={index} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
                   <h3 className="font-bold text-gray-800 mb-3">{category.category}</h3>
                   <div className="space-y-2">
                     {category.programs.map((program, pIndex) => (
                       <div key={pIndex} className="flex items-center text-gray-700">
-                        <span className="text-purple-500 mr-2">•</span>
+                        <span className="text-blue-500 mr-2">•</span>
                         <span>{program}</span>
                       </div>
                     ))}
@@ -101,10 +101,10 @@ export default function MahanaimCollegePage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-              <span className="w-2 h-6 bg-purple-600 mr-3 rounded"></span>
+              <span className="w-2 h-6 bg-blue-600 mr-3 rounded"></span>
               Examination Bodies
             </h2>
-            <div className="bg-purple-50 rounded-xl p-5">
+            <div className="bg-blue-50 rounded-xl p-5">
               <div className="grid grid-cols-2 gap-3">
                 {examBodies.map((body, index) => (
                   <div key={index} className="flex items-center justify-center bg-white rounded-lg py-2 px-3">
@@ -116,35 +116,6 @@ export default function MahanaimCollegePage() {
                 International standards for global recognition
               </p>
             </div>
-          </section>
-
-          <section className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl p-6 text-white">
-            <h3 className="text-lg font-bold mb-3">Why Choose Mahanaim?</h3>
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-center">
-                <span className="text-yellow-300 mr-2">✓</span>
-                <span>Ministry of Education Certified</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-yellow-300 mr-2">✓</span>
-                <span>Spiritual Nourishment Programs</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-yellow-300 mr-2">✓</span>
-                <span>International Curriculum Standards</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-yellow-300 mr-2">✓</span>
-                <span>Market-Ready Skill Development</span>
-              </li>
-            </ul>
-            <a 
-              href="http://www.mahanaim.ac.ke/admissions" 
-              target="_blank"
-              className="block w-full bg-white text-purple-600 text-center py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Apply for Admission
-            </a>
           </section>
         </div>
       </div>

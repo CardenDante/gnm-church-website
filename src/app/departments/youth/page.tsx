@@ -1,15 +1,16 @@
+import React from 'react';
 import { 
   Tent,
   Brain,
   Languages,
   Globe,
   Handshake,
-  Volleyball,
+  Activity,
   Target,
   RefreshCw,
   GitMerge,
   Calendar,
-  MapPin,
+  MapPin, 
   Users,
   Network,
   ArrowRight,
@@ -49,7 +50,7 @@ export default function IYFPage() {
     { 
       program: 'Sports & Activities', 
       description: 'Physical and recreational programs', 
-      icon: Volleyball 
+      icon: Activity 
     },
   ];
 
@@ -64,10 +65,10 @@ export default function IYFPage() {
     <div className="p-8">
       {/* Hero Section */}
       <div className="mb-10">
-        <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-100">
+        <div className=" py-8 border-b border-blue-200">
           <div className="flex items-center gap-3 mb-2">
-            <div className="p-2 bg-cyan-100 rounded-lg">
-              <Users className="w-6 h-6 text-cyan-600" />
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <Users className="w-6 h-6 text-blue-700" />
             </div>
             <h1 className="text-3xl font-bold text-gray-800">
               International Youth Fellowship
@@ -79,14 +80,14 @@ export default function IYFPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 gap-4">
         {/* Main Content */}
         <div>
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-              <div className="w-2 h-6 bg-cyan-600 rounded"></div>
+              <div className="w-2 h-6 bg-blue-700 rounded"></div>
               <div className="flex items-center gap-2">
-                <Target className="w-5 h-5 text-cyan-600" />
+                <Target className="w-5 h-5 text-blue-700" />
                 About IYF
               </div>
             </h2>
@@ -99,41 +100,41 @@ export default function IYFPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-              <div className="w-2 h-6 bg-cyan-600 rounded"></div>
+              <div className="w-2 h-6 bg-blue-700 rounded"></div>
               <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-cyan-600" />
+                <Star className="w-5 h-5 text-blue-700" />
                 Our Core Values
               </div>
             </h2>
             <div className="space-y-6">
-              <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-xl border border-cyan-200">
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-200">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-cyan-100 rounded-lg">
-                    <Target className="w-5 h-5 text-cyan-600" />
+                  <div className="p-2 bg-blue-100 rounded-lg">
+                    <Target className="w-5 h-5 text-blue-700" />
                   </div>
-                  <h3 className="text-xl font-bold text-cyan-700">CHALLENGE</h3>
+                  <h3 className="text-xl font-bold text-blue-700">CHALLENGE</h3>
                 </div>
                 <p className="text-gray-700">
                   A true challenge to overcome one's limitations and experience endless possibilities. We push boundaries and encourage youth to reach beyond their perceived limits.
                 </p>
               </div>
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200">
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-200">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-green-100 rounded-lg">
-                    <RefreshCw className="w-5 h-5 text-green-600" />
+                  <div className="p-2 bg-blue-100 rounded-lg">
+                    <RefreshCw className="w-5 h-5 text-blue-700" />
                   </div>
-                  <h3 className="text-xl font-bold text-green-700">CHANGE</h3>
+                  <h3 className="text-xl font-bold text-blue-700">CHANGE</h3>
                 </div>
                 <p className="text-gray-700">
                   A true change of life that begins from one's heart and then brings change to the world. We believe personal transformation leads to societal transformation.
                 </p>
               </div>
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200">
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-200">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-purple-100 rounded-lg">
-                    <GitMerge className="w-5 h-5 text-purple-600" />
+                  <div className="p-2 bg-blue-100 rounded-lg">
+                    <GitMerge className="w-5 h-5 text-blue-700" />
                   </div>
-                  <h3 className="text-xl font-bold text-purple-700">COHESION</h3>
+                  <h3 className="text-xl font-bold text-blue-700">COHESION</h3>
                 </div>
                 <p className="text-gray-700">
                   A true cohesive mind that transcends ethnicity, nationality, language, and religion. We build bridges of understanding across all divides.
@@ -144,12 +145,12 @@ export default function IYFPage() {
         </div>
 
         {/* Side Content */}
-        <div>
-          <section className="mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 my-8">
+          <section className="">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-              <div className="w-2 h-6 bg-cyan-600 rounded"></div>
+              <div className="w-2 h-6 bg-blue-700 rounded"></div>
               <div className="flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-cyan-600" />
+                <BookOpen className="w-5 h-5 text-blue-700" />
                 Programs & Activities
               </div>
             </h2>
@@ -157,9 +158,9 @@ export default function IYFPage() {
               {iyfPrograms.map((program, index) => {
                 const Icon = program.icon;
                 return (
-                  <div key={index} className="bg-white border border-gray-200 rounded-xl p-4 hover:border-cyan-300 hover:shadow-md transition-all group">
-                    <div className="p-2 bg-cyan-100 rounded-lg w-fit mb-2 group-hover:bg-cyan-200 transition-colors">
-                      <Icon className="w-5 h-5 text-cyan-600" />
+                  <div key={index} className="bg-white border border-gray-200 rounded-xl p-4 hover:border-blue-400 hover:shadow-md transition-all group">
+                    <div className="p-2 bg-blue-100 rounded-lg w-fit mb-2 group-hover:bg-blue-200 transition-colors">
+                      <Icon className="w-5 h-5 text-blue-700" />
                     </div>
                     <h3 className="font-bold text-gray-800 text-sm mb-1">{program.program}</h3>
                     <p className="text-xs text-gray-600">{program.description}</p>
@@ -169,68 +170,40 @@ export default function IYFPage() {
             </div>
           </section>
 
-          <section className="mb-8">
+       
+          <section className="">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
-              <div className="w-2 h-6 bg-cyan-600 rounded"></div>
+              <div className="w-2 h-6 bg-blue-700 rounded"></div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-cyan-600" />
-                Upcoming Events
-              </div>
-            </h2>
-            <div className="space-y-3">
-              {upcomingEvents.map((event, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-cyan-50 transition-colors group">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-cyan-100 rounded-lg">
-                      <MapPin className="w-4 h-4 text-cyan-600" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-800">{event.event}</p>
-                      <p className="text-sm text-gray-600">{event.location}</p>
-                    </div>
-                  </div>
-                  <span className="bg-cyan-100 text-cyan-800 text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    {event.date}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
-              <div className="w-2 h-6 bg-cyan-600 rounded"></div>
-              <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-cyan-600" />
+                <Award className="w-5 h-5 text-blue-700" />
                 Join IYF Kenya
               </div>
             </h2>
-            <div className="bg-cyan-50 rounded-xl p-6 border border-cyan-200">
+            <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
               <h3 className="font-bold text-gray-800 mb-3">Membership Benefits</h3>
               <ul className="space-y-2 mb-6 text-gray-700">
                 <li className="flex items-center gap-2">
-                  <Target className="w-4 h-4 text-cyan-600" />
+                  <Target className="w-4 h-4 text-blue-700" />
                   <span>Leadership training and development</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Network className="w-4 h-4 text-cyan-600" />
+                  <Network className="w-4 h-4 text-blue-700" />
                   <span>International networking opportunities</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Brain className="w-4 h-4 text-cyan-600" />
+                  <Brain className="w-4 h-4 text-blue-700" />
                   <span>Skill-building workshops</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Heart className="w-4 h-4 text-cyan-600" />
+                  <Heart className="w-4 h-4 text-blue-700" />
                   <span>Community service projects</span>
                 </li>
               </ul>
               <a 
-                href="https://iyfkenya.org/join" 
+                href="https://iyfkenya.org" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full bg-cyan-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors"
+                className="flex items-center justify-center gap-2 w-full bg-blue-700 text-white text-center py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors"
               >
                 Become a Member
                 <ArrowRight className="w-4 h-4" />
@@ -238,26 +211,6 @@ export default function IYFPage() {
             </div>
           </section>
 
-          <div className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-6 text-white">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-white/20 rounded-lg">
-                <Globe className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold">Global Network</h3>
-            </div>
-            <p className="text-cyan-100 mb-4 text-sm">
-              Connect with youth from over 80 countries through our international programs and exchanges.
-            </p>
-            <a 
-              href="https://iyfkenya.org" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-cyan-200 hover:text-white hover:underline"
-            >
-              Visit IYF Kenya Website
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
         </div>
       </div>
     </div>

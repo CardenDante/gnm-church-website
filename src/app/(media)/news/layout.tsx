@@ -59,8 +59,8 @@ export default function NewsLayout({
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Header */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 opacity-95"></div>
+      <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 to-cyan-800 text-white">
+       
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -71,9 +71,9 @@ export default function NewsLayout({
         <div className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center">
-              {/* <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-6">
+               <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-6">
                 <Newspaper className="w-8 h-8 text-white" />
-              </div> */}
+              </div> 
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 News & Updates
               </h1> 
@@ -87,27 +87,6 @@ export default function NewsLayout({
               </div>
               
 
-              {/* News Tabs */}
-              <div className="flex flex-wrap justify-center gap-3">
-                {newsTabs.map((tab) => {
-                  const isActive = pathname === tab.href;
-                  return (
-                    <Link
-                      key={tab.href}
-                      href={tab.href}
-                      className={`
-                        px-5 py-2.5 rounded-full font-medium transition-all duration-300 transform 
-                        ${isActive 
-                          ? 'bg-white text-blue-700 shadow-lg' 
-                          : `${tab.color} border hover:shadow-md`
-                        }
-                      `}
-                    >
-                      {tab.name}
-                    </Link>
-                  );
-                })}
-              </div>
             </div>
           </div>
         </div>
@@ -119,14 +98,14 @@ export default function NewsLayout({
           
           {/* Main Content */}
           <div className="lg:flex-1">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
               <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-blue-100 rounded-lg">
                       <TrendingIcon className="w-5 h-5 text-blue-600" />
                     </div>
-                    <h2 className="text-xl font-bold text-gray-800">Latest News Feed</h2>
+                    <h2 className="text-lg font-bold text-gray-800">Latest News Feed</h2>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="relative">
@@ -153,7 +132,7 @@ export default function NewsLayout({
           {/* Sidebar */}
           <div className="lg:w-96 space-y-8">
             {/* Trending Topics */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200">
+            <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-orange-500" />
@@ -173,26 +152,15 @@ export default function NewsLayout({
                       </span>
                     </div>
                     <p className="text-sm text-gray-600">{topic.count}</p>
-                    <div className="mt-2 h-1 bg-gray-200 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-blue-500 rounded-full"
-                        style={{ width: `${85 - (index * 15)}%` }}
-                      ></div>
-                    </div>
+                 
                   </div>
                 ))}
               </div>
-              <Link 
-                href="/media/news/trending"
-                className="inline-flex items-center mt-6 text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline"
-              >
-                View All Trends
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
+              
             </div>
 
             {/* Upcoming Events */}
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl shadow-xl p-6 border border-blue-200">
+            <div className="bg-white rounded-2xl shadow-lg p-6 border border-blue-100">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 bg-blue-100 rounded-lg">
                   <Calendar className="w-5 h-5 text-blue-600" />
@@ -203,7 +171,7 @@ export default function NewsLayout({
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="p-3 bg-white rounded-lg border border-blue-100">
+                <div className="p-3 bg-gray-50 rounded-lg border border-gray-100">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium text-blue-700">Next Week</span>
                     <span className="text-xs text-gray-500">Apr 15-17</span>
@@ -214,7 +182,8 @@ export default function NewsLayout({
                     <span>Nairobi Main Church</span>
                   </div>
                 </div>
-                <div className="p-3 bg-white rounded-lg border border-blue-100">
+                <div className="p-3 bg-gray-50 rounded-lg border border-gray-100">
+
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium text-blue-700">This Month</span>
                     <span className="text-xs text-gray-500">Apr 30</span>
@@ -226,52 +195,13 @@ export default function NewsLayout({
                   </div>
                 </div>
               </div>
-              <Link 
-                href="/media/news/calendar"
-                className="inline-flex items-center justify-center w-full mt-6 bg-blue-600 text-white py-2.5 rounded-lg font-medium hover:bg-blue-700 transition-colors"
-              >
-                View Full Calendar
-              </Link>
+            
             </div>
 
-            {/* Global Updates */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-xl p-6 text-white">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-white/20 rounded-lg">
-                  <Globe className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold">Global Updates</h3>
-                  <p className="text-sm text-gray-300">Across our network</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="p-3 bg-white/10 rounded-lg">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium">East Africa</span>
-                    <span className="text-xs text-gray-300">3 new churches</span>
-                  </div>
-                  <p className="text-sm text-gray-300">Expanding ministry reach</p>
-                </div>
-                <div className="p-3 bg-white/10 rounded-lg">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium">International</span>
-                    <span className="text-xs text-gray-300">5 countries</span>
-                  </div>
-                  <p className="text-sm text-gray-300">Online ministry growth</p>
-                </div>
-              </div>
-              <Link 
-                href="/media/news/global"
-                className="inline-flex items-center mt-6 text-sm text-blue-300 hover:text-blue-200 hover:underline"
-              >
-                View All Updates
-                <ExternalLink className="w-4 h-4 ml-1" />
-              </Link>
-            </div>
+           
 
             {/* Subscribe Card */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200">
+            <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
                   <Bell className="w-6 h-6 text-blue-600" />
@@ -282,9 +212,9 @@ export default function NewsLayout({
                   <input
                     type="email"
                     placeholder="Your email"
-                    className="w-full px-4 py-2.5 border border-gray-300 text-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2.5 border border-gray-300 text-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
-                  <button className="w-full bg-blue-600 text-white py-2.5 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                  <button className="w-full bg-blue-800 text-white py-2.5 rounded-lg font-medium hover:bg-blue-700 transition-colors">
                     Subscribe Now
                   </button>
                 </div>

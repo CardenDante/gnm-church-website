@@ -186,42 +186,7 @@ export default function SermonsPage() {
   
   return (
     <div className="p-6">
-      {/* Bento Grid - Featured Series */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Featured Series</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {featuredSeries.map((series) => {
-            const Icon = series.icon;
-            return (
-              <div 
-                key={series.id} 
-                className={`bg-gradient-to-br ${series.color} rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-shadow duration-300`}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-2 bg-white/20 rounded-lg">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
-                    {series.sermonCount} sermons
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">{series.title}</h3>
-                <p className="text-white/80 text-sm mb-3">{series.description}</p>
-                <div className="mt-4 pt-4 border-t border-white/20">
-                  <p className="text-sm text-white/90 mb-2">Latest: {series.latestSermon}</p>
-                  <Link 
-                    href={`/media/sermons/series/${series.id}`}
-                    className="text-sm font-medium hover:underline flex items-center gap-1"
-                  >
-                    Explore Series
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+   
 
       {/* Sermons Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
@@ -254,7 +219,7 @@ export default function SermonsPage() {
         {sermons.map((sermon) => {
           const hasVideo = !!sermon.videoId;
           
-          return (
+          return ( 
             <div key={sermon.id} className=" border-b border-gray-400 overflow-hidden  transition-all duration-300">
               <div className="pb-8 pt-4">
                 <div className={`${hasVideo ? 'flex flex-col lg:flex-row gap-6' : ''}`}>
@@ -270,23 +235,7 @@ export default function SermonsPage() {
                           allowFullScreen
                         />
                       </div>
-                      
-                      {/* Video Stats  */}
-                      <div className="mt-3 flex items-center justify-between text-sm text-gray-600">
-                        <div className="flex items-center gap-1">
-                          <Eye className="w-4 h-4" />
-                          <span>{sermon.views} views</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <button className="flex items-center gap-1 hover:text-red-500 transition-colors">
-                            <Heart className="w-4 h-4" />
-                            <span>{sermon.likes}</span>
-                          </button>
-                          <button className="hover:text-blue-600 transition-colors">
-                            <Share2 className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </div>
+                 
                     </div>
                   )}
                   
@@ -348,10 +297,7 @@ export default function SermonsPage() {
                             <PlayCircle className="w-4 h-4" />
                             Watch Sermon
                           </Link>
-                          <button className="inline-flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                            <Download className="w-4 h-4" />
-                            Download MP3
-                          </button>
+                        
                         </>
                       ) : (
                         <>
@@ -362,10 +308,7 @@ export default function SermonsPage() {
                             <PlayCircle className="w-4 h-4" />
                             Read Sermon
                           </Link>
-                          <button className="inline-flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                            <Download className="w-4 h-4" />
-                            Download PDF
-                          </button>
+                       
                         </>
                       )}
                       <Link 

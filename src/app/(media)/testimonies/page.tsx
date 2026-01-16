@@ -1,4 +1,4 @@
-// app/media/testimonies/page.tsx
+// app/testimonies/page.tsx
 'use client';
 
 import { useState } from 'react';
@@ -87,7 +87,7 @@ const testimonyStats = [
     title: "Most Viewed Testimony",
     name: "Margaret Kemunto Omundi",
     views: "4,321 views",
-    color: "from-green-500 to-green-600"
+    color: "from-blue-500 to-blue-600"
   },
   {
     title: "Latest Video Testimony",
@@ -108,42 +108,7 @@ export default function TestimoniesPage() {
   
   return (
     <div className="p-6">
-      {/* Bento Grid - Testimony Stats */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Featured Testimonies</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonyStats.map((stat, index) => (
-            <div 
-              key={index} 
-              className={`bg-gradient-to-br ${stat.color} rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-shadow duration-300`}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="p-2 bg-white/20 rounded-lg">
-                  <StarIcon className="w-6 h-6" />
-                </div>
-                <span className="text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
-                  Featured
-                </span>
-              </div>
-              <h3 className="text-xl font-bold mb-2">{stat.title}</h3>
-              <p className="text-white/80 text-sm mb-2">{stat.name}</p>
-              <div className="flex items-center gap-2 text-sm">
-                <Eye className="w-4 h-4" />
-                <span>{stat.views}</span>
-              </div>
-              <Link 
-                href={`/testimony/${stat.name.toLowerCase().replace(/ /g, '-')}`}
-                className="inline-flex items-center mt-4 text-sm font-medium hover:underline gap-1"
-              >
-                Read Story
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Testimonies Header with Controls */}
+      {/* Testimonies Header  */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
         <div>
           <h2 className="text-2xl font-bold text-gray-800">All Testimonies</h2>
@@ -153,7 +118,7 @@ export default function TestimoniesPage() {
           <select 
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
             <option value="all">All Testimonies</option>
             <option value="video">Video Testimonies</option>
@@ -199,24 +164,7 @@ export default function TestimoniesPage() {
                       )}
                     </div>
                     
-                    {/* Stats Bar */}
-                    <div className="mt-3 flex items-center justify-between text-sm text-gray-600">
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-1">
-                          <Eye className="w-4 h-4" />
-                          <span>{testimony.views} views</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Heart className="w-4 h-4" />
-                          <span>{testimony.likes}</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <button className="hover:text-green-600 transition-colors">
-                          <Share2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
+                 
                   </div>
                 </div>
                 
@@ -225,7 +173,7 @@ export default function TestimoniesPage() {
                   {/* Category and Read Time */}
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                     <div className="flex items-center gap-2">
-                      <span className="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">
                         {testimony.category}
                       </span>
                       {testimony.hasVideo && (
@@ -242,7 +190,7 @@ export default function TestimoniesPage() {
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2 hover:text-green-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition-colors">
                     <Link href={`/testimony/${testimony.id}`}>
                       {testimony.name}'s Testimony
                     </Link>
@@ -267,7 +215,7 @@ export default function TestimoniesPage() {
                   {/* Excerpt */}
                   <div className="mb-4">
                     <div className="relative pl-4">
-                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-green-500 rounded-full" />
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-full" />
                       <p className="text-gray-700 text-lg leading-relaxed">
                         {testimony.excerpt}
                       </p>
@@ -278,24 +226,21 @@ export default function TestimoniesPage() {
                   <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
                     <Link 
                       href={`/testimony/${testimony.id}`}
-                      className="inline-flex items-center gap-2 px-5 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium cursor-pointer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-blue-900 to-cyan-800 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer"
                     >
                       {testimony.hasVideo ? (
-                        <>
-                          <PlayCircle className="w-5 h-5" />
+                        <> 
+                          <PlayCircle className="w-4 h-4" />
                           Watch Testimony
                         </>
                       ) : (
                         <>
-                          <MessageSquare className="w-5 h-5" />
+                          <MessageSquare className="w-4 h-4" />
                           Read Testimony
                         </>
                       )}
                     </Link>
-                    <button className="inline-flex items-center gap-2 px-4 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <Heart className="w-4 h-4" />
-                      Like
-                    </button>
+                  
                     <button className="inline-flex items-center gap-2 px-4 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
                       <Share2 className="w-4 h-4" />
                       Share
@@ -325,7 +270,7 @@ export default function TestimoniesPage() {
                   key={page}
                   className={`px-3 py-1.5 text-sm rounded-lg ${
                     page === 1
-                      ? 'bg-green-600 text-white'
+                      ? 'bg-blue-600 text-white'
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >

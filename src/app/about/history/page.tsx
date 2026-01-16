@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Users, Bell, ScrollText, Building2, Rocket, Landmark, BookOpen, Monitor } from 'lucide-react';
 
 export default function HistoryPage() {
   const timelineEvents = [
@@ -7,57 +8,57 @@ export default function HistoryPage() {
       year: "1993",
       title: "First Encounter",
       description: "Kenyan delegation meets Good News Mission at South Korea trade exhibition",
-      icon: "👥",
+      icon: Users,
       color: "bg-blue-100 border-blue-200"
     },
     {
       year: "1994",
       title: "First Gospel Campaign",
       description: "Rev. Ock Soo Park preaches at Nyayo National Stadium",
-      icon: "📣",
-      color: "bg-green-100 border-green-200"
+      icon: Bell,
+      color: "bg-blue-100 border-blue-200"
     },
     {
       year: "1996",
       title: "Official Registration",
       description: "Good News Mission registered by Kenyan Government",
-      icon: "📜",
-      color: "bg-purple-100 border-purple-200"
+      icon: ScrollText,
+      color: "bg-blue-100 border-blue-200"
     },
     {
       year: "1997",
       title: "First Branch Church",
       description: "Migori Branch Church established",
-      icon: "⛪",
-      color: "bg-amber-100 border-amber-200"
+      icon: Building2,
+      color: "bg-blue-100 border-blue-200"
     },
     {
       year: "1999",
       title: "Ministers Dispatched",
       description: "First Kenyan ministers sent to 5 regions",
-      icon: "🚀",
-      color: "bg-cyan-100 border-cyan-200"
+      icon: Rocket,
+      color: "bg-blue-100 border-blue-200"
     },
     {
       year: "2001",
       title: "Land Acquisition",
       description: "Purchased land for Mission Center in Nairobi",
-      icon: "🏛️",
-      color: "bg-indigo-100 border-indigo-200"
+      icon: Landmark,
+      color: "bg-blue-100 border-blue-200"
     },
     {
       year: "2007",
       title: "Bible College",
       description: "Mahanaim Bible College started",
-      icon: "📚",
-      color: "bg-red-100 border-red-200"
+      icon: BookOpen,
+      color: "bg-blue-100 border-blue-200"
     },
     {
       year: "2009",
       title: "Broadcasting Launch",
       description: "GBS TV begins airing across East Africa",
-      icon: "📺",
-      color: "bg-orange-100 border-orange-200"
+      icon: Monitor,
+      color: "bg-blue-100 border-blue-200"
     }
   ];
 
@@ -74,8 +75,8 @@ export default function HistoryPage() {
 
   return (
     <main>
-      {/* Hero Section */}
-      <div className="relative py-20 bg-gradient-to-r from-blue-900 to-cyan-800">
+      {/* Hero Section */} 
+      <div className="relative bg-gradient-to-r from-blue-900 to-cyan-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Our Journey of Faith in Kenya
@@ -100,29 +101,6 @@ export default function HistoryPage() {
         </div>
       </div>
 
-      {/* Stats Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-8 relative z-10">
-        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl shadow-xl p-8 text-white">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">30+</div>
-              <div className="text-blue-100">Years in Kenya</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">32+</div>
-              <div className="text-blue-100">Branch Churches</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">5,000+</div>
-              <div className="text-blue-100">Members</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">6</div>
-              <div className="text-blue-100">Educational Institutions</div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Content Grid */}
       <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 py-8">
@@ -130,7 +108,7 @@ export default function HistoryPage() {
 
           {/* Left Column: History Text  */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl md:shadow-lg p-8">
+            <div className="bg-white rounded-2xl md:shadow-md p-8">
               <h2 className="text-3xl font-bold text-[#0477BF] mb-8">History of Good News Mission Kenya</h2>
 
               {/*  Text Content */}
@@ -229,7 +207,7 @@ export default function HistoryPage() {
                     className={`p-4 rounded-xl border ${event.color} hover:shadow-md transition-shadow`}
                   >
                     <div className="flex items-start">
-                      <div className="text-2xl mr-3">{event.icon}</div>
+                      <event.icon className="w-6 h-6 mr-3 text-[#0477BF] flex-shrink-0" />
                       <div>
                         <div className="flex items-center">
                           <span className="font-bold text-gray-800 mr-2">{event.year}</span>
@@ -271,19 +249,19 @@ export default function HistoryPage() {
             </div>
 
             {/* Quick Links Card */}
-            <div className="bg-gradient-to-br from-[#0477BF] to-cyan-600 md:rounded-2xl md:shadow-lg p-6 text-white">
+            <div className="bg-white md:rounded-2xl md:shadow-md p-6 text-gray-700">
               <h3 className="text-xl font-bold mb-4">Explore More</h3>
               <div className="space-y-3">
-                <Link href="/about/greetings" className="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                  <span className="mr-3">📜</span>
+                <Link href="/about/greetings" className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-white/20 transition-colors">
+                  <ScrollText className="w-5 h-5 mr-3" />
                   <span>Greetings Message</span>
                 </Link>
-                <Link href="/about/beliefs" className="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                  <span className="mr-3">✝️</span>
+                <Link href="/about/beliefs" className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-white/20 transition-colors">
+                  <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2m0 2a8 8 0 100 16 8 8 0 000-16m3.5 7a1 1 0 110 2h-1.5v1.5a1 1 0 11-2 0V13h-1.5a1 1 0 110-2h1.5V9.5a1 1 0 112 0V11h1.5z" /></svg>
                   <span>What We Believe</span>
                 </Link>
-                <Link href="/branches" className="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                  <span className="mr-3">🏛️</span>
+                <Link href="/branches" className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-white/20 transition-colors">
+                  <Landmark className="w-5 h-5 mr-3" />
                   <span>Our Branches</span>
                 </Link>
               </div>
